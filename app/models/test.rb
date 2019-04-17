@@ -1,11 +1,11 @@
 class Test < ApplicationRecord
   belongs_to :category
+  has_many :questions
+  has_many :answers, through: :questions
 
   def self.titles_by_category(title)
-    select('title')
-      .joins('JOIN categories ON categories.id = tests.category_id')
-      .where('categories.title = ?', title)
-      .order(title: :desc)
-      .map(&:title)
+    joins(:category).where(categories: { title: title })
+                    .order(title: :desc)
+                    .pluck(:title)
   end
 end
