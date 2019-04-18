@@ -10,3 +10,4 @@ Learning Project for Rails Basics.
   * Question
   * Answer
   * User
+  * PassedTest
