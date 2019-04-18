@@ -24,13 +24,13 @@ categories = Category.create([
 ])
 
 tests = Test.create([
-  { category: categories[0], title: 'Принципы ООП' },
-  { category: categories[0], title: 'Объект и класс' },
-  { category: categories[1], title: 'Оператор SELECT' },
-  { category: categories[2], title: 'Утиная типизация' },
-  { category: categories[2], title: 'Блоки' },
-  { category: categories[3], title: 'Миграции' },
-  { category: categories[3], title: 'ORM' }
+  { category: categories[0], title: 'Принципы ООП', author: users[0] },
+  { category: categories[0], title: 'Объект и класс', author: users[1] },
+  { category: categories[1], title: 'Оператор SELECT', author: users[2] },
+  { category: categories[2], title: 'Утиная типизация', author: users[3] },
+  { category: categories[2], title: 'Блоки', author: users[4] },
+  { category: categories[3], title: 'Миграции', author: users[0] },
+  { category: categories[3], title: 'ORM', author: users[1] }
 ])
 
 questions = Question.create([
