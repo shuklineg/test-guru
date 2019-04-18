@@ -1,7 +1,9 @@
 class User < ApplicationRecord
-  def tests(level)
-    Test.joins(:answers)
-        .where(answers: { user: self }, tests: { level: level })
+  has_many :passed_tests
+
+  def tests_by_level(level)
+    Test.joins(:passed_tests)
+        .where(passed_tests: { user: self }, level: level)
         .distinct
   end
 end
