@@ -1,0 +1,3 @@
+ru:
+  answers:
+    too_much: 'Не более %{count} ответов в вопросе'
