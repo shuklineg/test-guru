@@ -45,8 +45,6 @@ questions = Question.create([
 
 Answer.create([
   { question: questions[0], body: 'Да', correct: true},
-  { question: questions[0], body: 'Да', correct: true},
-  { question: questions[0], body: 'Да', correct: true},
   { question: questions[1], body: 'Нет', correct: false },
   { question: questions[2], body: 'Вернет выборку из одной строки содержащую "Hello, world!"', correct: true},
   { question: questions[3], body: 'Редкий вид крякающей чайки', correct: false},
