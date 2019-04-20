@@ -10,7 +10,7 @@ class Test < ApplicationRecord
   scope :hard, -> { by_level(5..Float::INFINITY) }
   scope :by_category, ->(title) { joins(:category).where(categories: { title: title }) } 
 
-  validates :title, :level, :author, :category, presence: true
+  validates :title, :level, presence: true
   validates :title, uniqueness: { scope: :level, case_sensitive: false }
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
