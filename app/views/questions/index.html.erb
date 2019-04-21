@@ -1,0 +1,10 @@
+<ul class='questions-list'>
+  <% @questions.each do |question| %>
+    <li>
+      <%= question.body %> 
+      <%= link_to 'Просмотр', question %>
+      <%= link_to 'Удалить', question, method: :delete %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to t('.new_test_question'), new_test_question_path(@test) %>
