@@ -8,6 +8,8 @@ ru:
       test_questions: 'Список вопросов'
     index:
       new_test_question: 'Создать новый вопрос'
+      show: 'Просмотр'
+      delete: 'Удалить'
     show:
       back: 'Назад'
   helpers:
