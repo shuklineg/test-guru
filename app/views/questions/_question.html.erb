@@ -1,9 +1,9 @@
-    <tr>
-      <td><%= question.body %></td>
-      <td>
-        <%= link_to t('.show'), question %> |
-        <%= link_to t('.delete'), question, method: :delete, data: { confirm: t('dialogs.are_you_sure')} %> |
-        <%= link_to t('.edit'), edit_question_path(question) %>
-      </td>
-    </tr>
-    
+<tr>
+  <td><%= question.body %></td>
+  <td>
+    <%= link_to t('.show'), question %> |
+    <%= link_to t('.delete'), question, method: :delete, data: { confirm: t('dialogs.are_you_sure')} %> |
+    <%= link_to t('.edit'), edit_question_path(question) %>
+  </td>
+ </tr>
+ 
