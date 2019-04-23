@@ -5,7 +5,9 @@ ru:
   questions:
     new:
       body: 'Текст вопроса'
-      test_questions: 'Список вопросов'
+      test_questions: &test_questions_list 'Список вопросов'
+    edit:
+      test_questions: *test_questions_list
     index:
       new_test_question: 'Создать новый вопрос'
       show: 'Просмотр'
@@ -18,5 +20,11 @@ ru:
   activerecord:
     models:
       question: 'Вопрос'
+    errors:
+      models:
+        question:
+          attributes:
+            body:
+              blank: 'Пустой вопрос'
   dialogs:
     are_you_sure: 'Вы уверены?'

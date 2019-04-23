@@ -1,10 +1,10 @@
-<ul class='questions-list'>
-  <% @questions.each do |question| %>
-    <li>
-      <%= question.body %> 
-      <%= link_to t('.show'), question %>
-      <%= link_to t('.delete'), question, method: :delete, data: { confirm: t('dialogs.are_you_sure')} %>
-    </li>
-  <% end %>
-</ul>
+<%= render @test %>
+<hr>
+<table class='questions-list'>
+  <tr>
+    <th>Question</th>
+    <th colspace=3>Actions</th>
+  </tr>
+  <%= render @questions %>
+</table>
 <%= link_to t('.new_test_question'), new_test_question_path(@test) %>

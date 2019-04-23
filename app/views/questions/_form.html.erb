@@ -1,0 +1,7 @@
+<%= form_with(model: [@test, @question], local: true) do |form| %>
+  <%= render 'shared/validation_errors', resource: @question %>
+  <%= form.hidden_field :test_id %>
+  <%= form.label :body, t('.body') %>
+  <%= form.text_field :body, id: :question_body %>
+  <%= form.submit %>
+<% end %>
