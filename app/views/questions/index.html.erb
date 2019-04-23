@@ -3,7 +3,7 @@
     <li>
       <%= question.body %> 
       <%= link_to t('.show'), question %>
-      <%= link_to t('.delete'), question, method: :delete %>
+      <%= link_to t('.delete'), question, method: :delete, data: { confirm: t('dialogs.are_you_sure')} %>
     </li>
   <% end %>
 </ul>
