@@ -1,0 +1,6 @@
+ru:
+  tests:
+    show:
+      tests: 'Тесты'
+      new_test_question: 'Создать новый вопрос'
+      actions: 'Действия'

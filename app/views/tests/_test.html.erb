@@ -1,7 +1,7 @@
-<h3><%= test.title %></h3>
-<div>
-  <div><strong><%= Test.human_attribute_name(:level) %>: </strong><%= test.level %></div>
-  <div><strong><%= Test.human_attribute_name(:category) %>: </strong><%= test.category.title %></div>
-  <div><strong><%= Test.human_attribute_name(:author) %>: </strong><%= mail_to_user(test.author) %></div>
-  <div><strong><%= Test.human_attribute_name('questions.size') %>:  </strong><%= test.questions.size %></div>
-<div>
+<tr>
+  <td><%= link_to test.title, test_path(test) %></td>
+  <td><%= test.level %></td>
+  <td><%= test.category.title %></td>
+  <td><%= mail_to_user(test.author) %></td>
+  <td><%= test.questions.size %></td>
+<tr>
