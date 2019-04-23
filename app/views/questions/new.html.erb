@@ -1,0 +1,7 @@
+<%= form_with model: [@test, @question] do |form| %>
+  <%= form.hidden_field :test_id %>
+  <%= form.label :body, t('.body') %>
+  <%= form.text_field :body  %>
+  <%= form.submit %>
+<% end %>
+<%= link_to t('.test_questions'), test_questions_path(@test) %>
