@@ -1,0 +1,10 @@
+ru:
+  shared:
+    footer:
+      description: 'Учебный проект в онлайн-школе'
+    validation_errors:
+      error:
+        one: "Форма содержит %{count} ошибку"
+        few: "Форма содержит %{count} ошибки"
+        many: "Форма содержит %{count} ошибок"
+        other: "Форма содержит %{count} ошибок"

@@ -1,7 +1,7 @@
 <h3><%= test.title %></h3>
 <div>
-  <div><strong>Level: </strong><%= test.level %></div>
-  <div><strong>Category: </strong><%= test.category.title %></div>
-  <div><strong>Author: </strong><%= mail_to_user(test.author) %></div>
-  <div><strong>Questions count: </strong><%= test.questions.size %></div>
+  <div><strong><%= Test.human_attribute_name(:level) %>: </strong><%= test.level %></div>
+  <div><strong><%= Test.human_attribute_name(:category) %>: </strong><%= test.category.title %></div>
+  <div><strong><%= Test.human_attribute_name(:author) %>: </strong><%= mail_to_user(test.author) %></div>
+  <div><strong><%= Test.human_attribute_name('questions.size') %>:  </strong><%= test.questions.size %></div>
 <div>
