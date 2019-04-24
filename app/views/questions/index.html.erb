@@ -1,8 +1,0 @@
-<table class='questions-list'>
-  <tr>
-    <th><%= Question.human_attribute_name(:body) %></th>
-    <th colspace=3><%= t('.actions') %></th>
-  </tr>
-  <%= render @questions %>
-</table>
-<%= link_to t('.new_test_question'), new_test_question_path(@test) %>

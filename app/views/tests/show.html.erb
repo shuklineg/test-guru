@@ -4,7 +4,7 @@
   <div><strong><%= Test.human_attribute_name(:category) %>: </strong><%= @test.category.title %></div>
   <div><strong><%= Test.human_attribute_name(:author) %>: </strong><%= mail_to_user(@test.author) %></div>
   <div><strong><%= Test.human_attribute_name('questions.size') %>:  </strong><%= @test.questions.size %></div>
-<div>
+</div>
 <hr>
 <table class='questions-list'>
   <tr>
