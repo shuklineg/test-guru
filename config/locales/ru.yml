@@ -1,22 +1,31 @@
 ru:
   answers:
     too_much: 'Не более %{count} ответов в вопросе'
+  error: 'Ошибка'
   record_not_found: 'Запись не найдена'
-  questions:
-    new:
-      body: 'Текст вопроса'
-      test_questions: 'Список вопросов'
-    index:
-      new_test_question: 'Создать новый вопрос'
-      show: 'Просмотр'
-      delete: 'Удалить'
-    show:
-      back: 'Назад'
   helpers:
     submit: 
       create: 'Создать %{model}'
+      update: 'Редактировать %{model}'
   activerecord:
+    attributes:
+      question:
+        body: 'Текст вопроса'
+      test:
+        level: 'Уровень'
+        title: 'Заголовок'
+        author: 'Автор'
+        category: 'Категория'
+        questions: 'Вопросы'
+      test/questions:
+        size: 'Количество вопросов'
     models:
       question: 'Вопрос'
+    errors:
+      models:
+        question:
+          attributes:
+            body:
+              blank: 'Пустое значение'
   dialogs:
     are_you_sure: 'Вы уверены?'
