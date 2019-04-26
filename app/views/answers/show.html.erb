@@ -1,0 +1,16 @@
+<h1><%= Question.model_name.human %></h1>
+<p>
+  <%= @answer.question.body %>
+</p>
+
+<p>
+  <b><%= Answer.model_name.human %>: </b>
+  <%= @answer.body %>
+</p>
+
+<p>
+  <b><%= Answer.human_attribute_name(:correct) %>:</b>
+  <%= @answer.correct %>
+</p>
+
+<%= link_to t('.back'), question_path(@answer.question) %>

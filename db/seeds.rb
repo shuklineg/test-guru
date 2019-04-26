@@ -52,13 +52,3 @@ Answer.create([
   { question: questions[5], body: 'Для переселения людей', correct: false},
   { question: questions[6], body: 'Объектно-реляционное отображение', correct: true}
 ])
-
-PassedTest.create([
-  { user: users[0], test: tests[0] },
-  { user: users[1], test: tests[1] },
-  { user: users[2], test: tests[2] },
-  { user: users[3], test: tests[3] },
-  { user: users[4], test: tests[4] },
-  { user: users[0], test: tests[5] },
-  { user: users[1], test: tests[6] }
-])

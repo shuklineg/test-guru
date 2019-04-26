@@ -1,0 +1,4 @@
+<h1><%= t('.title', title: @test_passage.test.title) %></h1>
+<h2><%= correct_percentage @test_passage %></h2>
+<hr>
+<%= link_to t('.tests'), tests_path %>

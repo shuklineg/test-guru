@@ -1,0 +1,6 @@
+<li>
+  <%= answer.body %> <%= answer.correct %><br>
+  <%= link_to t('.show'), answer_path(answer) %> |
+  <%= link_to t('.edit'), edit_answer_path(answer) %> |
+  <%= link_to t('.delete'), answer_path(answer), method: :delete, data: { confirm: t('dialogs.are_you_sure')} %>
+</li>
