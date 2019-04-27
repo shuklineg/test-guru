@@ -27,7 +27,7 @@ class TestPassage < ApplicationRecord
   end
 
   def question_number
-    test.questions.active.order(:id).where('questions.id <= ?', current_question
+    test.questions.active.order(:id).where('questions.id <= ?', current_question.id).count
   end
 
   private
