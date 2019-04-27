@@ -20,7 +20,7 @@ class Test < ApplicationRecord
     by_category(title).pluck(:title)
   end
 
-  def no_questions_or_answers?
-    [nil, 0].include?(questions.map { |question| question.answers.count }.min)
+  def active?
+    !questions.active.empty?
   end
 end

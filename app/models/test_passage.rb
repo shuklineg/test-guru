@@ -5,11 +5,11 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_create :before_create_set_first_question
-  before_update :before_update_next_question
+  before_create :set_first_question
+  before_update :next_question
 
   def correct_percentage
-    correct_questions.to_f / test.questions.count * 100
+    correct_questions.to_f / test.questions.active.count * 100
   end
 
   def completed?
@@ -27,13 +27,13 @@ class TestPassage < ApplicationRecord
   end
 
   def question_number
-    test.questions.order(:id).where('id <= ?', current_question.id).count
+    test.questions.active.order(:id).where('questions.id <= ?', current_question.id).count
   end
 
   private
 
-  def before_create_set_first_question
-    self.current_question = test.questions.first if test.present?
+  def set_first_question
+    self.current_question = test.questions.active.first if test.present?
   end
 
   def correct_answer?(answer_ids)
@@ -45,10 +45,10 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
+    test.questions.active.order(:id).where('questions.id > ?', current_question.id).first
   end
 
-  def before_update_next_question
+  def next_question
     self.current_question = next_question
   end
 end
