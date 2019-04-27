@@ -2,6 +2,7 @@ class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'User'
   has_many :questions, dependent: :destroy
+  has_many :answers, through: :questions
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
 
@@ -19,7 +20,7 @@ class Test < ApplicationRecord
     by_category(title).pluck(:title)
   end
 
-  def no_questions?
-    questions.count.zero?
+  def no_questions_or_answers?
+    [nil, 0].include?(questions.map { |question| question.answers.count }.min)
   end
 end

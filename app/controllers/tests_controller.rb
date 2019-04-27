@@ -39,7 +39,7 @@ class TestsController < ApplicationController
   end
 
   def start
-    if @test.no_questions?
+    if @test.no_questions_or_answers?
       redirect_to tests_path
     else
       @user.tests.push(@test)
