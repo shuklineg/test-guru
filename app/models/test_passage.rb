@@ -5,7 +5,7 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validaton_set_first_question, on: :create
+  before_create :before_create_set_first_question
   before_update :before_update_next_question
 
   def correct_percentage
@@ -32,7 +32,7 @@ class TestPassage < ApplicationRecord
 
   private
 
-  def before_validaton_set_first_question
+  def before_create_set_first_question
     self.current_question = test.questions.first if test.present?
   end
 

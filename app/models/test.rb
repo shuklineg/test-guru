@@ -1,7 +1,7 @@
 class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'User'
-  has_many :questions, dependent: :destroy  
+  has_many :questions, dependent: :destroy
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
 
@@ -17,5 +17,9 @@ class Test < ApplicationRecord
 
   def self.titles_by_category(title)
     by_category(title).pluck(:title)
+  end
+
+  def no_questions?
+    questions.count.zero?
   end
 end
