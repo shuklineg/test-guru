@@ -27,13 +27,13 @@ class TestPassage < ApplicationRecord
   end
 
   def question_number
-    test.questions.active.order(:id).where('questions.id <= ?', current_question.id).count
+    test.questions.active.order(:id).where('questions.id <= ?', current_question
   end
 
   private
 
   def set_first_question
-    self.current_question = test.questions.active.first if test.present?
+    self.current_question = test.questions.active.first
   end
 
   def correct_answer?(answer_ids)
