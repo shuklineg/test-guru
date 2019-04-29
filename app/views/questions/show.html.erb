@@ -2,4 +2,13 @@
   <span><%= Question.human_attribute_name(:body) %> </span>
   <span><%= @question.body %></span>
 </div>
-<%= link_to t('.back'), :back %>
+
+<h2><%= t('.answers') %></h2>
+
+<%= link_to t('.new'), new_question_answer_path(@question) %>
+
+<ol>
+  <%= render @question.answers %>
+</ol>
+
+<%= link_to t('.back'), test_path(@question.test) %>

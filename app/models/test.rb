@@ -1,8 +1,10 @@
 class Test < ApplicationRecord
   belongs_to :category
-  belongs_to :author, class_name: 'User', foreign_key: :author_id
+  belongs_to :author, class_name: 'User'
   has_many :questions, dependent: :destroy
-  has_many :passed_tests, dependent: :destroy
+  has_many :answers, through: :questions
+  has_many :test_passages, dependent: :destroy
+  has_many :users, through: :test_passages
 
   scope :by_level, ->(level) { where(level: level) }
   scope :easy, -> { by_level(0..1) }
@@ -16,5 +18,9 @@ class Test < ApplicationRecord
 
   def self.titles_by_category(title)
     by_category(title).pluck(:title)
+  end
+
+  def active?
+    !questions.active.empty?
   end
 end

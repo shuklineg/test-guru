@@ -1,0 +1,15 @@
+ru:
+  answers:
+    answer:
+      show: &show 'Открыть'
+      edit: 'Редактировать'
+      delete: 'Удалить'
+    new:
+      new_answer: 'Новый ответ'
+      back: &back 'Назад'
+    show:
+      back: *back
+    edit:
+      edit_answer: 'Редактирование ответа'
+      show: *show
+      back: *back

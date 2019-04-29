@@ -4,4 +4,7 @@
   <td><%= test.category.title %></td>
   <td><%= mail_to_user(test.author) %></td>
   <td><%= test.questions.size %></td>
+  <td><%= link_to t('.edit'), edit_test_path(test) %> </td>
+  <td><%= link_to t('.destroy'), test_path(test), method: :delete, data: { confirm: t('dialogs.are_you_sure')}  %></td>
+  <td><%= button_to t('.start'), start_test_path(test), disabled: !test.active? %></td>
 <tr>

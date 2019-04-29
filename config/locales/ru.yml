@@ -2,6 +2,8 @@ ru:
   answers:
     too_much: 'Не более %{count} ответов в вопросе'
   error: 'Ошибка'
+  test_failed: 'Тест не сдан'
+  test_passed: 'Тест сдан'
   record_not_found: 'Запись не найдена'
   helpers:
     submit: 
@@ -19,8 +21,13 @@ ru:
         questions: 'Вопросы'
       test/questions:
         size: 'Количество вопросов'
+      answer:
+        body: 'Текст ответа'
+        correct: 'Правильный ответ'
     models:
       question: 'Вопрос'
+      test: 'Тест'
+      answer: 'Ответ'
     errors:
       models:
         question:
