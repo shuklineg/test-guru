@@ -1,4 +1,5 @@
 ru:
+  title: 'Test Guru'
   answers:
     too_much: 'Не более %{count} ответов в вопросе'
   error: 'Ошибка'
@@ -24,6 +25,10 @@ ru:
       answer:
         body: 'Текст ответа'
         correct: 'Правильный ответ'
+      user:
+        email: 'Адрес электронный почты'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
     models:
       question: 'Вопрос'
       test: 'Тест'

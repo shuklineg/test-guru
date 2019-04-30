@@ -5,8 +5,10 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :own_tests, class_name: 'Test', foreign_key: :author_id, dependent: :nullify
 
-  validates :encrypted_password, presence: true
   validates :email, format: VALID_EMAIL
+  validates :email, uniqueness: { case_sensitive: false }
+
+  has_secure_password
 
   def tests_by_level(level)
     tests.where(level: level)

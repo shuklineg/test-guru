@@ -9,11 +9,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 users = User.create([
-  { email: 'pooh@mail.ru', encrypted_password: Digest::SHA1.hexdigest('12345') },
-  { email: 'piglet@yandex.ru', encrypted_password: Digest::SHA1.hexdigest('50 cents') },
-  { email: 'tigger@gmail.com', encrypted_password: Digest::SHA1.hexdigest('1q2w3e4r') },
-  { email: 'rabbit@gmail.com', encrypted_password: Digest::SHA1.hexdigest('carrot') },
-  { email: 'eeyore@mail.com', encrypted_password: Digest::SHA1.hexdigest('111') }
+  { email: 'pooh@mail.ru', password: '12345', password_confirmation: '12345' },
+  { email: 'piglet@yandex.ru', password: '50 cents', password_confirmation: '50 cents' },
+  { email: 'tigger@gmail.com', password: '1q2w3e4r', password_confirmation: '1q2w3e4r' },
+  { email: 'rabbit@gmail.com', password: 'carrot', password_confirmation: 'carrot' },
+  { email: 'eeyore@mail.com', password: '111', password_confirmation: '111' }
 ])
 
 categories = Category.create([

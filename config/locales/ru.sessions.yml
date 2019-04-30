@@ -1,0 +1,8 @@
+ru:
+  sessions:
+    new:
+      title: 'Войдите в ворота Гуру'
+    form:
+      submit: 'Вход'
+      email: 'Адрес электронный почты'
+      password: 'Пароль'
