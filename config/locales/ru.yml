@@ -38,6 +38,22 @@ ru:
         question:
           attributes:
             body:
-              blank: 'Пустое значение'
+              blank: &blank 'Пустое значение'
+        user:
+          attributes:
+            email:
+              invalid: 'Неверный формат'
+            password:
+              blank: *blank
+            password_confirmation:
+              confirmation: 'Пароли не совпадают'
+        test:
+          attributes:
+            title:
+              blank: *blank
+        answer:
+          attributes:
+            body:
+              blank: *blank
   dialogs:
     are_you_sure: 'Вы уверены?'

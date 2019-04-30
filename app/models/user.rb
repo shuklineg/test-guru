@@ -8,6 +8,10 @@ class User < ApplicationRecord
   validates :email, format: VALID_EMAIL
   validates :email, uniqueness: { case_sensitive: false }
 
+  before_validation do
+    email.downcase!.strip!
+  end
+
   has_secure_password
 
   def tests_by_level(level)
