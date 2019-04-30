@@ -6,7 +6,9 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
-    unless logged_in?
+    if logged_in?
+      cookies.delete(:redirect_form) if cookies[:redirect_form] 
+    else
       cookies[:redirect_form] = request.fullpath if request.method == 'GET'
       redirect_to login_path
     end

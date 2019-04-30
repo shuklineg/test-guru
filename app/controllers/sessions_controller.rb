@@ -8,16 +8,9 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      if cookies[:redirect_form]
-        redirect_from = cookies[:redirect_form]
-        cookies.delete(:redirect_form)
-        redirect_to redirect_from
-      else
-        redirect_to root_path
-      end
+      redirect_to cookies[:redirect_form] || root_path
     else
-      flash.now[:alert] = t('.login_error')
-      render :new
+      render :new, alert: t('.login_error')
     end
   end
 
