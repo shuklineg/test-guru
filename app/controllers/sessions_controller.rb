@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to cookies[:redirect_form] || root_path
     else
-      render :new, alert: t('.login_error')
+      flash.now[:alert] = t('.login_error')
+      render :new
     end
   end
 
