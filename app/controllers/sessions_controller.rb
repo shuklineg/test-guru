@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
         redirect_to root_path
       end
     else
-      flash.now[:alert] = 'Are you a Guru? Verify your Email and Password please'
+      flash.now[:alert] = t('.login_error')
       render :new
     end
   end
