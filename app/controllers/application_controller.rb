@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     resource.is_a?(Admin) ? admin_tests_path : session['user_return_to'] || root_path
   end
 
+  def after_sign_out_path_for(_resource)
+    new_user_session_path
+  end
+
   def storable_location?
     request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
   end
