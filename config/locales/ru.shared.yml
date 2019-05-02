@@ -1,5 +1,11 @@
 ru:
   shared:
+    navigation:
+      login: 'Вход'
+      logout: 'Выход'
+      signup: 'Регистрация'
+      create_test: 'Создать тест'
+      tests: 'Тесты'
     footer:
       description: 'Учебный проект в онлайн-школе'
     validation_errors:

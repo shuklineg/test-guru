@@ -1,6 +1,16 @@
 <hr>
 <nav>
-  <%= link_to_unless_current t('.tests'), tests_path %> |
-  <%= link_to_unless_current t('.create_test'), new_test_path %>
+  <h1>
+    <%= link_to_unless_current t('title'), root_path %>
+  </h1>
+  <% if logged_in? %>
+    <%= link_to_unless_current t('.tests'), tests_path %> |
+    <%= link_to_unless_current t('.create_test'), new_test_path %> |
+    <%= link_to_unless_current t('.logout'), logout_path %>
+    <p class='nav user'> Welcome, <b><%= current_user.email %></b> Guru</p>
+  <% else %>
+    <%= link_to_unless_current t('.login'), login_path %> |
+    <%= link_to_unless_current t('.signup'), signup_path %>
+  <% end %>
 </nav>
 <hr>

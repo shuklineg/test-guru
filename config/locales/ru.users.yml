@@ -1,0 +1,6 @@
+ru:
+  users:
+    new:
+      title: 'Стань Гуру!'
+    form:
+      submit: 'Регистрация'
