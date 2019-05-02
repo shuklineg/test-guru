@@ -11,6 +11,6 @@
     <th><%= Question.human_attribute_name(:body) %></th>
     <th colspace=3><%= t('.actions') %></th>
   </tr>
-  <%= render partial: 'questions/question', collection: @test.questions %>
+  <%= render @test.questions %>
 </table>
-<%= link_to t('.new_test_question'), new_test_question_path(@test) %>
+<%= link_to t('.new_test_question'), new_admin_test_question_path(@test) %>

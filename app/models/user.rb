@@ -20,4 +20,8 @@ class User < ApplicationRecord
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
+
+  def fullname
+    I18n.t('user.fullname', first_name: first_name, last_name: last_name).strip
+  end
 end

@@ -1,6 +1,5 @@
 ru:
-  users:
-    new:
-      title: 'Стань Гуру!'
-    form:
-      submit: 'Регистрация'
+  user:
+    fullname: '%{last_name} %{first_name}'
+    hello: 'Привет, %{name}!'
+    null: 'Пользователь не задан'
