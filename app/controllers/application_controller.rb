@@ -1,22 +1,17 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :logged_in?
+  before_action :store_user_location!, if: :storable_location?
 
-  private
+  protected
 
-  def authenticate_user!
-    if logged_in?
-      cookies.delete(:redirect_form) if cookies[:redirect_form]
-    else
-      cookies[:redirect_form] = request.fullpath if request.method == 'GET'
-      redirect_to login_path
-    end
+  def after_sign_in_path_for(resource)
+    resource.is_a?(Admin) ? admin_tests_path : session['user_return_to'] || path
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  def storable_location?
+    request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
   end
 
-  def logged_in?
-    current_user.present?
+  def store_user_location!
+    store_location_for(:user, request.fullpath)
   end
 end

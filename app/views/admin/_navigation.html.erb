@@ -1,0 +1,14 @@
+<hr>
+<div class="nav nav-admin">
+  <h1 class="nav-admin title">
+    <%= link_to_unless_current t('title'), root_path %>
+    Admin Panel
+  </h1>
+  <div class='nav-admin user'>
+    Welcome, <b class='nav-admin email'><%= current_user.email %></b> Guru |
+    <%= link_to_unless_current t('.logout'), destroy_user_session_path, method: :delete %> |
+    <%= link_to_unless_current t('.tests'), admin_tests_path %> |
+    <%= link_to_unless_current t('.create_test'), new_admin_test_path %>    
+  </div>
+</div>
+<hr>

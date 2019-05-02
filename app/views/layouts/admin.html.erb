@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= t('title') %></title>
+    <title>Admin Panel | <%= t('title') %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,7 +11,7 @@
 
   <body>
     <%= render 'shared/flash' %>
-    <%= render 'shared/navigation' %>
+    <%= render 'admin/navigation' %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
