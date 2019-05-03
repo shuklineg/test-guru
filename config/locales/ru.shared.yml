@@ -4,8 +4,8 @@ ru:
       login: 'Вход'
       logout: 'Выход'
       signup: 'Регистрация'
-      create_test: 'Создать тест'
       tests: 'Тесты'
+      edit_user: 'Редактировать учетную запись'
     footer:
       description: 'Учебный проект в онлайн-школе'
     validation_errors:
