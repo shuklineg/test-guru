@@ -1,19 +1,6 @@
 ru:
   tests:
-    show:
-      tests: 'Тесты'
-      new_test_question: 'Создать новый вопрос'
-      actions: 'Действия'
     test:
-      edit: 'Редактировать'
-      destroy: 'Удалить'
       start: 'Начать'
     index:
       actions: 'Действия'
-      create: 'Создать тест'
-    new:
-      new_test: 'Создать тест'
-      back: &back 'Назад'
-    edit:
-      edit_test: 'Редактировать тест'
-      back: *back

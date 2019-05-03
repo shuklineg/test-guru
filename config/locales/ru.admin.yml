@@ -1,0 +1,53 @@
+ru:
+  admin:
+    navigation:
+      login: 'Вход'
+      logout: 'Выход'
+      signup: 'Регистрация'
+      create_test: 'Создать тест'
+      tests: 'Тесты'
+      edit_user: 'Редактировать учетную запись'
+    tests:
+      test:
+        edit: 'Редактировать'
+        destroy: 'Удалить'
+      index:
+        actions: 'Действия'
+        create: 'Создать тест'
+      new:
+        new_test: 'Создать тест'
+        back: &back 'Назад'
+      edit:
+        edit_test: 'Редактировать тест'
+        back: *back
+      show:
+        tests: 'Тесты'
+        new_test_question: 'Создать новый вопрос'
+        actions: 'Действия'
+    questions:
+      new:
+        test: &test 'Назад к тесту'
+      edit:
+        test: *test
+      question:
+        show: 'Просмотр'
+        delete: 'Удалить'
+        edit: 'Редактировать'
+      show:
+        back: 'Назад'
+        answers: 'Список ответов'
+        new: 'Добавить ответ'
+    answers:
+      answer:
+        show: &show 'Открыть'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+      new:
+        new_answer: 'Новый ответ'
+        back: &back 'Назад'
+      show:
+        back: *back
+      edit:
+        edit_answer: 'Редактирование ответа'
+        show: *show
+        back: *back

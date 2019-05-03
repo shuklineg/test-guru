@@ -1,2 +1,3 @@
-  <%= flash_alert(flash[:alert]) if flash[:alert] %>
-  <%= flash_notice(flash[:notice]) if flash[:notice] %>
+<% flash.each do |key, message| %>
+  <%= flash_message(message, key) %>
+<% end %>

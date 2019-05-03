@@ -1,5 +1,11 @@
 ru:
   title: 'Test Guru'
+  admin_panel: 'Панель управления'
+  welcome_admin_html: 'Добро пожаловать, <b class="nav-admin email"> %{email} </b>'
+  welcome_user_html: 'Добро пожаловать, <b class="nav-user email">%{email}</b>'
+  tests_mailer:
+    completed_test:
+      completed: 'Вы завершили тест на TestGuru!'
   answers:
     too_much: 'Не более %{count} ответов в вопросе'
   error: 'Ошибка'
@@ -26,13 +32,18 @@ ru:
         body: 'Текст ответа'
         correct: 'Правильный ответ'
       user:
+        remember_me: 'Запомнить меня'
         email: 'Адрес электронный почты'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        current_password: 'Текущий пароль'
     models:
       question: 'Вопрос'
       test: 'Тест'
       answer: 'Ответ'
+      user: 'Пользователь'
     errors:
       models:
         question:
@@ -43,10 +54,17 @@ ru:
           attributes:
             email:
               invalid: 'Неверный формат'
+              blank: *blank
             password:
               blank: *blank
             password_confirmation:
               confirmation: 'Пароли не совпадают'
+            current_password:
+              blank: *blank
+            first_name:
+              blank: *blank
+            last_name:
+              blank: *blank
         test:
           attributes:
             title:
@@ -57,3 +75,4 @@ ru:
               blank: *blank
   dialogs:
     are_you_sure: 'Вы уверены?'
+    you_not_authorized: 'Вы не имеете права доступа к этой странице'

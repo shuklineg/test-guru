@@ -1,0 +1,16 @@
+<h3><%= @test.title %></h3>
+<div>
+  <div><strong><%= Test.human_attribute_name(:level) %>: </strong><%= @test.level %></div>
+  <div><strong><%= Test.human_attribute_name(:category) %>: </strong><%= @test.category.title %></div>
+  <div><strong><%= Test.human_attribute_name(:author) %>: </strong><%= mail_to_user(@test.author) %></div>
+  <div><strong><%= Test.human_attribute_name('questions.size') %>:  </strong><%= @test.questions.size %></div>
+</div>
+<hr>
+<table class='questions-list'>
+  <tr>
+    <th><%= Question.human_attribute_name(:body) %></th>
+    <th colspace=3><%= t('.actions') %></th>
+  </tr>
+  <%= render @test.questions %>
+</table>
+<%= link_to t('.new_test_question'), new_admin_test_question_path(@test) %>

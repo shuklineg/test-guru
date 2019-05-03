@@ -1,7 +1,7 @@
 module UsersHelper
   def mail_to_user(user)
-    return 'Unknown' unless user
+    return t('user.null') unless user
 
-    mail_to(user.nickname || user.email, user.email)
+    mail_to(user.email, user.fullname.blank? ? user.email : user.fullname)
   end
 end
