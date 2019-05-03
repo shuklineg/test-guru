@@ -2,3 +2,5 @@ ru:
   tests:
     test:
       start: 'Начать'
+    index:
+      actions: 'Действия'
