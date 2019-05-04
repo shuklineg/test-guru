@@ -1,0 +1,9 @@
+ru:
+  helpers:
+    label:
+      email: 'Адрес электронной почты'
+    submit: 
+      create: 'Создать %{model}'
+      update: 'Редактировать %{model}'
+    select:
+      prompt: 'Выберите из списка'

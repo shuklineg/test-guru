@@ -1,21 +1,4 @@
 ru:
-  title: 'Test Guru'
-  admin_panel: 'Панель управления'
-  welcome_admin_html: 'Добро пожаловать, <b class="nav-admin email"> %{email} </b>'
-  welcome_user_html: 'Добро пожаловать, <b class="nav-user email">%{email}</b>'
-  tests_mailer:
-    completed_test:
-      completed: 'Вы завершили тест на TestGuru!'
-  answers:
-    too_much: 'Не более %{count} ответов в вопросе'
-  error: 'Ошибка'
-  test_failed: 'Тест не сдан'
-  test_passed: 'Тест сдан'
-  record_not_found: 'Запись не найдена'
-  helpers:
-    submit: 
-      create: 'Создать %{model}'
-      update: 'Редактировать %{model}'
   activerecord:
     attributes:
       question:
@@ -31,6 +14,7 @@ ru:
       answer:
         body: 'Текст ответа'
         correct: 'Правильный ответ'
+        count: 'Количество ответов'
       user:
         remember_me: 'Запомнить меня'
         email: 'Адрес электронный почты'
@@ -49,11 +33,11 @@ ru:
         question:
           attributes:
             body:
-              blank: &blank 'Пустое значение'
+              blank: &blank 'не может быть пустым'
         user:
           attributes:
             email:
-              invalid: 'Неверный формат'
+              invalid: 'имеет неверный формат'
               blank: *blank
             password:
               blank: *blank
@@ -73,6 +57,3 @@ ru:
           attributes:
             body:
               blank: *blank
-  dialogs:
-    are_you_sure: 'Вы уверены?'
-    you_not_authorized: 'Вы не имеете права доступа к этой странице'

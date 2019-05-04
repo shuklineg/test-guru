@@ -1,0 +1,59 @@
+en:
+  activerecord:
+    attributes:
+      question:
+        body: 'Body'
+      test:
+        level: 'Level'
+        title: 'Title'
+        author: 'Author'
+        category: 'Category'
+        questions: 'Questions'
+      test/questions:
+        size: 'Questions count'
+      answer:
+        body: 'Body'
+        correct: 'Correct answer'
+        count: 'Answers count'
+      user:
+        remember_me: 'Remember me'
+        email: 'Email'
+        password: 'Passowrd'
+        password_confirmation: 'Password confirmation'
+        first_name: 'First name'
+        last_name: 'Last name'
+        current_password: 'Current password'
+    models:
+      question: 'Question'
+      test: 'Test'
+      answer: 'Answer'
+      user: 'User'
+    errors:
+      models:
+        question:
+          attributes:
+            body:
+              blank: &blank "can't be blank"
+        user:
+          attributes:
+            email:
+              invalid: 'have invalid format'
+              blank: *blank
+            password:
+              blank: *blank
+            password_confirmation:
+              confirmation: 'Passwords do not match'
+            current_password:
+              blank: *blank
+            first_name:
+              blank: *blank
+            last_name:
+              blank: *blank
+        test:
+          attributes:
+            title:
+              blank: *blank
+        answer:
+          attributes:
+            body:
+              blank: *blank

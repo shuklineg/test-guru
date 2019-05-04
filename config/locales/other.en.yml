@@ -1,0 +1,13 @@
+en:
+  title: 'Test Guru'
+  admin_panel: 'Administration panel'
+  welcome_admin_html: 'Welcome, <b class="nav-admin email"> %{email} </b>'
+  welcome_user_html: 'Welcome, <b class="nav-user email">%{email}</b>'
+  error: 'Error'
+  test_failed: 'Test not passed'
+  test_passed: 'Test passed'
+  record_not_found: 'Record not found'
+  too_much: "can't be more then %{count}"
+  dialogs:
+    are_you_sure: 'Are you sure?'
+    you_not_authorized: 'You are not authorized for this page'
