@@ -1,0 +1,9 @@
+en:
+  helpers:
+    label:
+      email: 'Email'
+    submit: 
+      create: 'Create %{model}'
+      update: 'Edit %{model}'
+    select:
+      prompt: 'Select from list'

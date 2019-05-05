@@ -1,0 +1,121 @@
+ru:
+  devise:
+    registrations:
+      new:
+        signup_title: 'Регистрация пользователя'
+        signup: 'Регистрация'
+        minimum_password_length: &minimum_password_length 'минимальная длина пароля %{length} символов'
+      edit:
+        edit_user: 'Редактирование учетной записи'
+        leave_blank: 'оставьте пустым, если не хотите менять'
+        minimum_password_length: *minimum_password_length
+        update: 'Сохранить изменения'
+        need_your_password: 'введите текущий пароль для сохранения изменений'
+        cancel_account_title: 'Удаление учетной записи'
+        cancel_account: 'Удалить'
+    sessions:
+      new:
+        login_title: 'Вход пользователя'
+        login: &login 'Вход'
+    shared:
+      links:
+        login: *login
+        sign_up: 'Регистрация'
+        recover: 'Восстановить пароль'
+        confirm: 'Не пришло письмо с подтверждением регистрации?'
+        unlock: 'Не пришло письмо для разблокирования?'
+        sign_in_with: 'Войти с помощью %{provider}'
+    passwords:
+      new:
+        title: 'Забыли пароль?'
+        send: 'Отправить письмо для смены пароля'
+      edit:
+        title: 'Смена пароля'
+        minimum_password_length: *minimum_password_length
+        change: 'Изменить пароль'
+    confirmations:
+      new:
+        resend_confirmation_title: 'Отправить письмо с подтверждением повторно'
+        resend_confirmation: 'Отправить'
+  shared:
+    navigation:
+      login: *login
+      logout: &logout 'Выход'
+      signup: 'Регистрация'
+      tests: 'Тесты'
+      edit_user: 'Редактировать учетную запись'
+    footer:
+      description: 'Учебный проект в онлайн-школе'
+    validation_errors:
+      error:
+        one: "Форма содержит %{count} ошибку"
+        few: "Форма содержит %{count} ошибки"
+        many: "Форма содержит %{count} ошибок"
+        other: "Форма содержит %{count} ошибок"
+  test_passages:
+    show:
+      next: 'Следующий'
+      title: &test_passages_title 'Тест "%{title}"'
+      count: 'Всего вопросов %{count}'
+    result:
+      tests: 'Список тестов'
+      test_failed: 'Тест не пройден'
+      test_passed: 'Тест успешно пройден'
+      title: *test_passages_title
+  tests:
+    test:
+      start: 'Начать'
+    index:
+      actions: 'Действия'
+  admin:
+    navigation:
+      login: *login
+      logout: *logout
+      signup: 'Регистрация'
+      create_test: 'Создать тест'
+      tests: 'Тесты'
+      edit_user: 'Редактировать учетную запись'
+    tests:
+      test:
+        edit: 'Редактировать'
+        destroy: 'Удалить'
+      index:
+        actions: 'Действия'
+        create: 'Создать тест'
+      new:
+        new_test: 'Создать тест'
+        back: &back 'Назад'
+      edit:
+        edit_test: 'Редактировать тест'
+        back: *back
+      show:
+        tests: 'Тесты'
+        new_test_question: 'Создать новый вопрос'
+        actions: 'Действия'
+    questions:
+      new:
+        test: &test 'Назад к тесту'
+      edit:
+        test: *test
+      question:
+        show: 'Просмотр'
+        delete: 'Удалить'
+        edit: 'Редактировать'
+      show:
+        back: *back
+        answers: 'Список ответов'
+        new: 'Добавить ответ'
+    answers:
+      answer:
+        show: &show 'Открыть'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+      new:
+        new_answer: 'Новый ответ'
+        back: &back 'Назад'
+      show:
+        back: *back
+      edit:
+        edit_answer: 'Редактирование ответа'
+        show: *show
+        back: *back

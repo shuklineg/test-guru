@@ -1,0 +1,5 @@
+en:
+  user:
+    fullname: '%{first_name} %{last_name}'
+    hello: 'Hello, %{name}!'
+    null: 'User not found'

@@ -1,0 +1,117 @@
+en:
+  devise:
+    registrations:
+      new:
+        signup_title: 'User registration'
+        signup: 'Registration'
+        minimum_password_length: &minimum_password_length 'minimum password length characters %{length}'
+      edit:
+        edit_user: &edit_account 'Edit account'
+        leave_blank: "leave blank if you don't want to change"
+        minimum_password_length: *minimum_password_length
+        update: 'Save changes'
+        need_your_password: 'enter current password to save changes'
+        cancel_account_title: 'Cancel account'
+        cancel_account: 'Cancel account'
+    sessions:
+      new:
+        login_title: 'User login'
+        login: &login 'Login'
+    shared:
+      links:
+        login: *login
+        sign_up: 'Registration'
+        recover: 'Recover password'
+        confirm: 'Did not receive a confirmation email?'
+        unlock: 'Did not receive a letter to unlock?'
+        sign_in_with: 'Login with %{provider}'
+    passwords:
+      new:
+        title: 'Forgot your password?'
+        send: 'Send email to change password'
+      edit:
+        title: 'Change password'
+        minimum_password_length: *minimum_password_length
+        change: 'Change passwordь'
+    confirmations:
+      new:
+        resend_confirmation_title: 'Resend confirmation email'
+        resend_confirmation: 'Send'
+  shared:
+    navigation:
+      login: *login
+      logout: &logout 'logout'
+      signup: 'Registration'
+      tests: 'Tests'
+      edit_user: *edit_account
+    footer:
+      description: 'Educational project in an online school'
+    validation_errors:
+      error:
+        one: "Form contains %{count} error"
+        other: "Form contains %{count} errors"
+  test_passages:
+    show:
+      next: 'Next'
+      title: &test_passages_title 'Test "%{title}"'
+      count: 'Total questions %{count}'
+    result:
+      tests: 'Tests list'
+      test_failed: 'Test not passed'
+      test_passed: 'Test passed'
+      title: *test_passages_title
+  tests:
+    test:
+      start: 'Start'
+    index:
+      actions: 'Actions'
+  admin:
+    navigation:
+      login: *login
+      logout: *logout
+      create_test: 'Create test'
+      tests: 'Tests'
+      edit_user: *edit_account
+    tests:
+      test:
+        edit: 'Edit'
+        destroy: 'Delete'
+      index:
+        actions: 'Actions'
+        create: 'Create test'
+      new:
+        new_test: 'Create'
+        back: &back 'back'
+      edit:
+        edit_test: 'Edit test'
+        back: *back
+      show:
+        new_test_question: 'Create new question'
+        actions: 'Actions'
+    questions:
+      new:
+        test: 'Test'
+      edit:
+        test: 'Test'
+      question:
+        show: 'Show'
+        delete: 'Delete'
+        edit: 'Edit'
+      show:
+        back: *back
+        answers: 'Answers'
+        new: 'New answer'
+    answers:
+      answer:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+      new:
+        new_answer: 'New answer'
+        back: *back
+      show:
+        back: *back
+      edit:
+        edit_answer: 'Edit answer'
+        show: 'Show'
+        back: *back

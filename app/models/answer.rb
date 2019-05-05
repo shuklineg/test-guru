@@ -11,7 +11,7 @@ class Answer < ApplicationRecord
   private
 
   def validate_count
-    maximum = question && question.answers.size >= MAXIMUM_ANSWES
-    errors.add(:answers_count, I18n.t('answers.too_much', count: MAXIMUM_ANSWES)) if maximum
+    maximum = question && question.answers.size > MAXIMUM_ANSWES
+    errors.add(:count, I18n.t('.too_much', count: MAXIMUM_ANSWES)) if maximum
   end
 end
