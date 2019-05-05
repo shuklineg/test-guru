@@ -38,12 +38,15 @@ ru:
         resend_confirmation_title: 'Отправить письмо с подтверждением повторно'
         resend_confirmation: 'Отправить'
   shared:
+    locales:
+      language: 'Язык'
     navigation:
       login: *login
       logout: &logout 'Выход'
       signup: 'Регистрация'
       tests: 'Тесты'
       edit_user: 'Редактировать учетную запись'
+      admin_panel: 'Панель администрирования'
     footer:
       description: 'Учебный проект в онлайн-школе'
     validation_errors:

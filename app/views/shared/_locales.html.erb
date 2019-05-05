@@ -1,4 +1,10 @@
-<div class='language'>
-  <%= link_to_unless I18n.locale == :ru, 'RU', '?locale=ru' %> |
-  <%= link_to_unless I18n.locale == :en, 'EN', '?locale=en' %>
-</div>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <%= t('.language')%>
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <%= link_to_unless I18n.locale == :ru, 'RU', '?locale=ru' %> 
+    <div class="dropdown-divider"></div>
+    <%= link_to_unless I18n.locale == :en, 'EN', '?locale=en' %>
+  </div>
+</li>

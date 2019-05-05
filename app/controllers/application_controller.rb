@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     flash[:notice] = I18n.t('user.hello', name: resource.fullname) unless resource.fullname.blank?
 
-    resource.is_a?(Admin) ? admin_tests_path : session['user_return_to'] || root_path
+    resource.admin? ? admin_tests_path : session['user_return_to'] || root_path
   end
 
   def after_sign_out_path_for(_resource)

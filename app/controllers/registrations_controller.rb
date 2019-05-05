@@ -9,7 +9,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_update_path_for(resource)
-    resource.is_a?(Admin) ? admin_tests_path : root_path
+    resource.admin? ? admin_tests_path : root_path
   end
 
   def after_inactive_sign_up_path_for(_resource)

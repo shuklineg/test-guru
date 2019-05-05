@@ -38,12 +38,15 @@ en:
         resend_confirmation_title: 'Resend confirmation email'
         resend_confirmation: 'Send'
   shared:
+    locales:
+      language: 'Language'
     navigation:
       login: *login
       logout: &logout 'logout'
       signup: 'Registration'
       tests: 'Tests'
       edit_user: *edit_account
+      admin_panel: 'Admin panel'
     footer:
       description: 'Educational project in an online school'
     validation_errors:
