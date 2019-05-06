@@ -11,6 +11,7 @@ ru:
         minimum_password_length: *minimum_password_length
         update: 'Сохранить изменения'
         need_your_password: 'введите текущий пароль для сохранения изменений'
+        need_confirm: 'Ожидается подтверждение для почтового адреса'
         cancel_account_title: 'Удаление учетной записи'
         cancel_account: 'Удалить'
     sessions:

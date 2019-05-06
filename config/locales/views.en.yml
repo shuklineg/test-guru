@@ -13,6 +13,7 @@ en:
         need_your_password: 'enter current password to save changes'
         cancel_account_title: 'Cancel account'
         cancel_account: 'Cancel account'
+        need_confirm: 'Currently waiting confirmation for'
     sessions:
       new:
         login_title: 'User login'
