@@ -67,6 +67,8 @@ ru:
       title: *test_passages_title
   tests:
     test:
+      level: 'Уровень'
+      questions_count: 'Количество вопросов'
       start: 'Начать'
     index:
       actions: 'Действия'

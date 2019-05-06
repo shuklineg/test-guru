@@ -1,8 +1,26 @@
-<tr>
-  <td><%= test.title %></td>
-  <td><%= test.level %></td>
-  <td><%= test.category.title %></td>
-  <td><%= mail_to_user(test.author) %></td>
-  <td><%= test.questions.active.size %></td>
-  <td><%= button_to t('.start'), start_test_path(test), disabled: !test.active? %></td>
-<tr>
+<div class='col-lg-4 m-5 p-3 border rounded border-secondary'>
+  <div class='h1 text-center'>
+    <%= test.title %>
+  </div>
+  <div class='lead'>
+    <%= test.category.title %>
+  </div>
+  <div class='m-4'>
+    <span class='ml-2'>
+      <%= t('.level')%>
+      <span class='badge badge-primary'>
+        <%= test.level %>
+      </span>
+    </span>
+    <span class='ml-2'>
+      <%= t('.questions_count')%>
+      <span class='badge badge-primary'>
+        <%= test.questions.active.size %>
+      </span>
+    </span>
+    <span class='ml-2'>
+      <%= mail_to_user(test.author) %>
+    </span>
+  </div>
+  <%= button_to t('.start'), start_test_path(test), disabled: !test.active?, class: 'btn btn-primary btn-lg btn-block' %>
+</div>

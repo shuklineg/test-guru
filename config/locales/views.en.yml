@@ -66,6 +66,8 @@ en:
   tests:
     test:
       start: 'Start'
+      level: 'Level'
+      questions_count: 'Questions count'
     index:
       actions: 'Actions'
   admin:

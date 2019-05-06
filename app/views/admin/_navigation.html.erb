@@ -1,4 +1,4 @@
-<nav class='navbar navbar-light bg-primary navbar-expand-md'>
+<nav class='navbar navbar-dark bg-dark navbar-expand-lg'>
   <%= link_to t('title'), root_path, class: 'navbar-brand h1' %>
   <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
     <span class='navbar-toggler-icon'></span>
@@ -16,13 +16,6 @@
       <li class='nav-item'>
         <%= link_to t('.create_test'), new_admin_test_path, class: 'nav-link' %>
       </li>
-      <li class='nav-item'>
-        <%= link_to t('.edit_user'),  edit_user_registration_path, class: 'nav-link' %>
-      </li>
-      <li class='nav-item'>
-        <%= link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'nav-link' %>    
-      </li>
-      <%= render 'shared/locales' %>
     </ul>
   </div>
 </nav>
