@@ -8,12 +8,6 @@
       <dt class='col-lg-3'><%= Question.human_attribute_name(:body) %> </dt>
       <dd class='col-lg-9'><%= @question.body %></dd>
     </dl>
-
-    <div class='btn-group my-5' role='group'>
-      <%= link_to t('.edit'), edit_admin_question_path(@question), class: 'btn btn-secondary' %>
-      <%= link_to t('.destroy'), admin_question_path(@question), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-secondary'  %>
-    </div>
-
     <h4><%= t('.answers') %></h4>
     <div class='table-responsive'>
       <table class='table table-striped'>
@@ -25,6 +19,11 @@
         <%= render @question.answers %>
       </table>
     </div>
-    <%= link_to t('.new'), new_admin_question_answer_path(@question), class:'btn btn-primary my-3' %>
+    <div class='btn-group my-5' role='group'>
+      <%= link_to t('.new'), new_admin_question_answer_path(@question), class:'btn btn-primary' %>
+      <%= link_to t('.test'), admin_test_path(@question.test), class: 'btn btn-secondary' %>
+      <%= link_to t('.edit'), edit_admin_question_path(@question), class: 'btn btn-secondary' %>
+      <%= link_to t('.destroy'), admin_question_path(@question), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-danger' %>
+    </div>
   </div>
 </div>

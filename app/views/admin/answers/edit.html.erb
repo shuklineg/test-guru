@@ -1,10 +1,13 @@
-<h1><%= t('.edit_answer')%></h1>
-
-<p>
-  <%= @answer.question.body %>
-</p>
-
-<%= render 'form' %>
-
-<%= link_to t('.show'), [:admin, @answer] %> |
-<%= link_to t('.back'), admin_question_path(@answer.question) %>
+<div class='card col-lg-8 offset-lg-2 border rounded my-3 text-xs-center'>
+  <div class='card-body'>
+    <h1 class='card-title'><%= t('.edit_answer')%></h1>
+    <p>
+      <%= @answer.question.body %>
+    </p>
+    <%= render 'form' %>
+    <div class='btn-group my-3 btn-block' role='group'>
+      <%= link_to t('.question'), admin_question_path(@answer.question), class: 'btn btn-secondary' %>
+      <%= link_to t('.destroy'), admin_answer_path(@answer), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-secondary'  %>
+    </div>
+  </div>
+</div>

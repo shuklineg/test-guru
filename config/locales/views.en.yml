@@ -75,6 +75,7 @@ en:
     navigation:
       login: *login
       logout: *logout
+      signup: 'Registration'
       create_test: 'Create test'
       tests: 'Tests'
       edit_user: *edit_account
@@ -96,6 +97,7 @@ en:
         destroy: 'Delete'
         show: 'Open'
       show:
+        tests: 'Tests'
         new_test_question: 'Create new question'
         actions: 'Actions'
         edit: 'Edit'
@@ -104,12 +106,14 @@ en:
     questions:
       new:
         test: 'Test'
-        question_title: '%{action} %{test} question'
+        question_title: '%{action} "%{test}" question'
         create: 'Create'
       edit:
         test: 'Test'
-        question_title: '%{action} %{test} question'
+        question_title: '%{action} "%{test}" question'
         edit: 'Edit'
+        show: 'Open'
+        destroy: 'Delete'
       question:
         show: 'Show'
         destroy: 'Delete'
@@ -122,17 +126,20 @@ en:
         destroy: 'Delete'
         edit: 'Edit'
         actions: 'Actions'
+        test: 'Test'
     answers:
       answer:
         show: 'Show'
         edit: 'Edit'
-        delete: 'Delete'
+        destroy: 'Delete'
       new:
         new_answer: 'New answer'
         back: *back
+        question: 'Question'
       show:
         back: *back
       edit:
         edit_answer: 'Edit answer'
+        question: 'Question'
         show: 'Show'
         back: *back

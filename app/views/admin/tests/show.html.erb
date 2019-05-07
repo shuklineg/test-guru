@@ -14,11 +14,6 @@
       <dt class='col-lg-3'><%= Test.human_attribute_name('questions.size') %>
       <dd class='col-lg-9'><%= @test.questions.size %></dd>
     </dl>
-    <div class='btn-group my-5' role='group'>
-      <%= link_to t('.tests'), admin_tests_path, class: 'btn btn-secondary' %>
-      <%= link_to t('.edit'), edit_admin_test_path(@test), class: 'btn btn-secondary' %>
-      <%= link_to t('.destroy'), admin_test_path(@test), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-secondary'  %>
-    </div>
     <h4><%= t('.questions') %></h4>
     <div class='table-responsive'>
       <table class='table table-striped'>
@@ -30,6 +25,11 @@
         <%= render @test.questions %>
       </table>
     </div>
-    <%= link_to t('.new_test_question'), new_admin_test_question_path(@test), class:'btn btn-primary my-3' %>
+    <div class='btn-group my-5' role='group'>
+      <%= link_to t('.new_test_question'), new_admin_test_question_path(@test), class:'btn btn-primary' %>
+      <%= link_to t('.tests'), admin_tests_path, class: 'btn btn-secondary' %>
+      <%= link_to t('.edit'), edit_admin_test_path(@test), class: 'btn btn-secondary' %>
+      <%= link_to t('.destroy'), admin_test_path(@test), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-danger'  %>
+    </div>
   </div>
 </div>

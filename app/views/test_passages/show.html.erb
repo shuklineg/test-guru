@@ -12,8 +12,10 @@
       <ul class='list-group list-group-flush'>
         <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
           <li class='list-group-item form-check'>
-            <%= b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input' %>
-            <%= b.label class: 'form-check-label' %>
+            <div class='custom-control custom-checkbox m-3'>
+              <%= b.check_box id: "answer_ids_#{b.object.id}", class: 'custom-control-input' %>
+              <%= b.label class: 'custom-control-label' %>
+            </div>
           </li>
         <% end %>
       </ul>

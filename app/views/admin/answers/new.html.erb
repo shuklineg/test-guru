@@ -1,9 +1,10 @@
-<h1><%= t('.new_answer')%></h1>
-
-<p>
-  <%= @question.body %>
-</p>
-
-<%= render 'form' %>
-
-<%= link_to t('.back'), admin_question_path(@question) %>
+<div class='card col-lg-8 offset-lg-2 border rounded my-3 text-xs-center'>
+  <div class='card-body'>
+    <h1 class='card-title'><%= t('.new_answer')%></h1>
+    <p>
+      <%= @question.body %>
+    </p>
+    <%= render 'form' %>
+    <%= link_to t('.question'), admin_question_path(@question), class: 'btn btn-secondary my-3 btn-block' %>
+  </div>
+</div>
