@@ -104,16 +104,24 @@ en:
     questions:
       new:
         test: 'Test'
+        question_title: '%{action} %{test} question'
+        create: 'Create'
       edit:
         test: 'Test'
+        question_title: '%{action} %{test} question'
+        edit: 'Edit'
       question:
         show: 'Show'
-        delete: 'Delete'
+        destroy: 'Delete'
         edit: 'Edit'
       show:
         back: *back
         answers: 'Answers'
         new: 'New answer'
+        title: 'Question'
+        destroy: 'Delete'
+        edit: 'Edit'
+        actions: 'Actions'
     answers:
       answer:
         show: 'Show'

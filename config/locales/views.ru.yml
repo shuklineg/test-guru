@@ -108,16 +108,27 @@ ru:
     questions:
       new:
         test: &test 'Назад к тесту'
+        question_title: '%{action} вопроса из теста %{test}'
+        create: 'Создание'
+
       edit:
         test: *test
+        question_title: '%{action} вопроса из теста %{test}'
+        edit: 'Редактирование'
+        show: 'Открыть'
+        destroy: 'Удалить'
       question:
         show: 'Просмотр'
-        delete: 'Удалить'
+        destroy: 'Удалить'
         edit: 'Редактировать'
       show:
         back: *back
         answers: 'Список ответов'
         new: 'Добавить ответ'
+        title: 'Вопрос'
+        destroy: 'Удалить'
+        actions: 'Действия'
+        edit: 'Редактировать'
     answers:
       answer:
         show: &show 'Открыть'

@@ -1,6 +1,11 @@
-<li>
-  <%= answer.body %> <%= answer.correct %><br>
-  <%= link_to t('.show'), admin_answer_path(answer) %> |
-  <%= link_to t('.edit'), edit_admin_answer_path(answer) %> |
-  <%= link_to t('.delete'), admin_answer_path(answer), method: :delete, data: { confirm: t('dialogs.are_you_sure')} %>
-</li>
+<tr>
+  <td><%= answer.body %></td>
+  <td><%= answer.correct ? '&#10004;'.html_safe : '&#10008;'.html_safe %></td>
+  <td>
+    <div class='btn-group' role='group'>
+      <%= link_to t('.show'), admin_answer_path(answer), class: 'btn btn-secondary' %>
+      <%= link_to t('.edit'), edit_admin_answer_path(answer), class: 'btn btn-secondary' %>
+      <%= link_to t('.delete'), admin_answer_path(answer), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-secondary' %>
+    </div>
+  </td>
+<tr>

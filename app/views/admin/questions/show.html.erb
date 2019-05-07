@@ -1,14 +1,30 @@
-<div>
-  <span><%= Question.human_attribute_name(:body) %> </span>
-  <span><%= @question.body %></span>
+<div class='card col-lg-8 offset-lg-2'>
+  <div class="card-body">
+    <h3 class='card-title'><%= t('.title') %></h3>
+    <dl class='row'>
+      <dt class='col-lg-3'><%= Test.model_name.human %> </dt>
+      <dd class='col-lg-9'><%= link_to @question.test.title, admin_test_path(@question.test) %> </dd>
+
+      <dt class='col-lg-3'><%= Question.human_attribute_name(:body) %> </dt>
+      <dd class='col-lg-9'><%= @question.body %></dd>
+    </dl>
+
+    <div class='btn-group my-5' role='group'>
+      <%= link_to t('.edit'), edit_admin_question_path(@question), class: 'btn btn-secondary' %>
+      <%= link_to t('.destroy'), admin_question_path(@question), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-secondary'  %>
+    </div>
+
+    <h4><%= t('.answers') %></h4>
+    <div class='table-responsive'>
+      <table class='table'>
+        <tr>
+          <th class='col'><%= Answer.human_attribute_name(:body) %></th>
+          <th class='col'><%= Answer.human_attribute_name(:correct) %></th>
+          <th class='col'><%= t('.actions') %></th>
+        </tr>
+        <%= render @question.answers %>
+      </table>
+    </div>
+    <%= link_to t('.new'), new_admin_question_answer_path(@question), class:'btn btn-primary my-3' %>
+  </div>
 </div>
-
-<h2><%= t('.answers') %></h2>
-
-<%= link_to t('.new'), new_admin_question_answer_path(@question) %>
-
-<ol>
-  <%= render @question.answers %>
-</ol>
-
-<%= link_to t('.back'), admin_test_path(@question.test) %>
