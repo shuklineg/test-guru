@@ -82,18 +82,25 @@ en:
       test:
         edit: 'Edit'
         destroy: 'Delete'
+        open: 'Open'
       index:
         actions: 'Actions'
         create: 'Create test'
       new:
         new_test: 'Create'
+        tests: 'Tests list'
         back: &back 'back'
       edit:
         edit_test: 'Edit test'
-        back: *back
+        tests: 'Tests list'
+        destroy: 'Delete'
+        show: 'Open'
       show:
         new_test_question: 'Create new question'
         actions: 'Actions'
+        edit: 'Edit'
+        destroy: 'Delete'
+        questions: 'Questions list'
     questions:
       new:
         test: 'Test'

@@ -1,6 +1,6 @@
 
 <% if resource.errors.any? %>
-  <div id="error_explanation">
+  <div id='error_explanation'>
     <h2><%= t('.error', count: resource.errors.count) %>:</h2>
     <ul>
       <% resource.errors.full_messages.each do |message| %>

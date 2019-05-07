@@ -1,8 +1,10 @@
 <tr>
   <td><%= question.body %></td>
   <td>
-    <%= link_to t('.show'), [:admin, question] %> |
-    <%= link_to t('.delete'), [:admin, question], method: :delete, data: { confirm: t('dialogs.are_you_sure')} %> |
-    <%= link_to t('.edit'), edit_admin_question_path(question) %>
+    <div class='btn-group' role='group'>
+      <%= link_to t('.show'), [:admin, question], class: 'btn btn-secondary' %>
+      <%= link_to t('.edit'), edit_admin_question_path(question), class: 'btn btn-secondary' %>
+      <%= link_to t('.delete'), [:admin, question], method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-secondary' %>
+    </div>
   </td>
  </tr>

@@ -85,19 +85,26 @@ ru:
       test:
         edit: 'Редактировать'
         destroy: 'Удалить'
+        open: 'Открыть'
       index:
         actions: 'Действия'
         create: 'Создать тест'
       new:
         new_test: 'Создать тест'
+        tests: 'Список тестов'
         back: &back 'Назад'
       edit:
         edit_test: 'Редактировать тест'
-        back: *back
+        tests: 'Список тестов'
+        destroy: 'Удалить'
+        show: 'Открыть'
       show:
         tests: 'Тесты'
         new_test_question: 'Создать новый вопрос'
         actions: 'Действия'
+        destroy: 'Удалить'
+        edit: 'Редактировать'
+        questions: 'Список вопросов'
     questions:
       new:
         test: &test 'Назад к тесту'

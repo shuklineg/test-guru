@@ -1,16 +1,29 @@
 <h3><%= @test.title %></h3>
-<div>
-  <div><strong><%= Test.human_attribute_name(:level) %>: </strong><%= @test.level %></div>
-  <div><strong><%= Test.human_attribute_name(:category) %>: </strong><%= @test.category.title %></div>
-  <div><strong><%= Test.human_attribute_name(:author) %>: </strong><%= mail_to_user(@test.author) %></div>
-  <div><strong><%= Test.human_attribute_name('questions.size') %>:  </strong><%= @test.questions.size %></div>
+<dl class='row'>
+  <dt class='col-lg-3'><%= Test.human_attribute_name(:level) %> </dt>
+  <dd class='col-lg-9'><%= @test.level %></dd>
+
+  <dt class='col-lg-3'><%= Test.human_attribute_name(:category) %></dt>
+  <dd class='col-lg-9'><%= @test.category.title %></dd>
+
+  <dt class='col-lg-3'><%= Test.human_attribute_name(:author) %></dt>
+  <dd class='col-lg-9'><%= mail_to_user(@test.author) %></dd>
+
+  <dt class='col-lg-3'><%= Test.human_attribute_name('questions.size') %>
+  <dd class='col-lg-9'><%= @test.questions.size %></dd>
+</dl>
+<div class='btn-group my-5' role='group'>
+  <%= link_to t('.edit'), edit_admin_test_path(@test), class: 'btn btn-secondary' %>
+  <%= link_to t('.destroy'), admin_test_path(@test), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-secondary'  %>
 </div>
-<hr>
-<table class='questions-list'>
-  <tr>
-    <th><%= Question.human_attribute_name(:body) %></th>
-    <th colspace=3><%= t('.actions') %></th>
-  </tr>
-  <%= render @test.questions %>
-</table>
-<%= link_to t('.new_test_question'), new_admin_test_question_path(@test) %>
+<h4><%= t('.questions') %></h4>
+<div class='table-responsive'>
+  <table class='table'>
+    <tr>
+      <th class='col'><%= Question.human_attribute_name(:body) %></th>
+      <th class='col'><%= t('.actions') %></th>
+    </tr>
+    <%= render @test.questions %>
+  </table>
+</div>
+<%= link_to t('.new_test_question'), new_admin_test_question_path(@test), class:'btn btn-primary my-5' %>
