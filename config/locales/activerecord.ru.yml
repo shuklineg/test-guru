@@ -3,6 +3,8 @@ ru:
     attributes:
       question:
         body: 'Текст вопроса'
+      question/answers:
+        size: 'Количество вопросов'
       test:
         level: 'Уровень'
         title: 'Заголовок'

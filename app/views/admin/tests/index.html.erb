@@ -1,5 +1,5 @@
 <div class="table-responsive">
-  <table class='table'>
+  <table class='table table-striped'>
     <tr>
       <th class='col'><%= Test.human_attribute_name(:title) %></th>
       <th class='col'><%= Test.human_attribute_name(:level) %></th>
@@ -11,4 +11,4 @@
     <%= render @tests %>
   </table>
 </div>
-<%= link_to t('.create'), new_admin_test_path, class: 'btn btn-primary' %>
+<%= link_to t('.create'), new_admin_test_path, class: 'btn btn-primary m-3' %>
