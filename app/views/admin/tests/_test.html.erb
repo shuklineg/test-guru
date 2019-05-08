@@ -1,9 +1,14 @@
-<tr>
-  <td><%= link_to test.title, admin_test_path(test) %></td>
+<tr class='<%= 'bg-warning' if test.questions.active.size.zero? %>'>
+  <td><%= test.title %></td>
   <td><%= test.level %></td>
   <td><%= test.category.title %></td>
   <td><%= mail_to_user(test.author) %></td>
   <td><%= test.questions.size %></td>
-  <td><%= link_to t('.edit'), edit_admin_test_path(test) %> </td>
-  <td><%= link_to t('.destroy'), admin_test_path(test), method: :delete, data: { confirm: t('dialogs.are_you_sure')}  %></td>
+  <td>
+    <div class='btn-group' role='group'>
+      <%= link_to t('.open'), admin_test_path(test), class: 'btn btn-secondary' %>
+      <%= link_to t('.edit'), edit_admin_test_path(test), class: 'btn btn-secondary' %>
+      <%= link_to t('.destroy'), admin_test_path(test), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-danger'  %>
+    </div>
+  </td>
 <tr>

@@ -13,6 +13,7 @@ en:
         need_your_password: 'enter current password to save changes'
         cancel_account_title: 'Cancel account'
         cancel_account: 'Cancel account'
+        need_confirm: 'Currently waiting confirmation for'
     sessions:
       new:
         login_title: 'User login'
@@ -38,12 +39,15 @@ en:
         resend_confirmation_title: 'Resend confirmation email'
         resend_confirmation: 'Send'
   shared:
+    locales:
+      language: 'Language'
     navigation:
       login: *login
       logout: &logout 'logout'
       signup: 'Registration'
       tests: 'Tests'
       edit_user: *edit_account
+      admin_panel: 'Admin panel'
     footer:
       description: 'Educational project in an online school'
     validation_errors:
@@ -63,12 +67,15 @@ en:
   tests:
     test:
       start: 'Start'
+      level: 'Level'
+      questions_count: 'Questions count'
     index:
       actions: 'Actions'
   admin:
     navigation:
       login: *login
       logout: *logout
+      signup: 'Registration'
       create_test: 'Create test'
       tests: 'Tests'
       edit_user: *edit_account
@@ -76,42 +83,63 @@ en:
       test:
         edit: 'Edit'
         destroy: 'Delete'
+        open: 'Open'
       index:
         actions: 'Actions'
         create: 'Create test'
       new:
         new_test: 'Create'
+        tests: 'Tests list'
         back: &back 'back'
       edit:
         edit_test: 'Edit test'
-        back: *back
+        tests: 'Tests list'
+        destroy: 'Delete'
+        show: 'Open'
       show:
+        tests: 'Tests'
         new_test_question: 'Create new question'
         actions: 'Actions'
+        edit: 'Edit'
+        destroy: 'Delete'
+        questions: 'Questions list'
     questions:
       new:
         test: 'Test'
+        question_title: '%{action} "%{test}" question'
+        create: 'Create'
       edit:
         test: 'Test'
+        question_title: '%{action} "%{test}" question'
+        edit: 'Edit'
+        show: 'Open'
+        destroy: 'Delete'
       question:
         show: 'Show'
-        delete: 'Delete'
+        destroy: 'Delete'
         edit: 'Edit'
       show:
         back: *back
         answers: 'Answers'
         new: 'New answer'
+        title: 'Question'
+        destroy: 'Delete'
+        edit: 'Edit'
+        actions: 'Actions'
+        test: 'Test'
     answers:
       answer:
         show: 'Show'
         edit: 'Edit'
-        delete: 'Delete'
+        destroy: 'Delete'
       new:
         new_answer: 'New answer'
         back: *back
+        question: 'Question'
       show:
         back: *back
       edit:
         edit_answer: 'Edit answer'
+        question: 'Question'
         show: 'Show'
         back: *back

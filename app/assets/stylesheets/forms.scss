@@ -1,0 +1,8 @@
+.field_with_errors{
+  label{
+    @extend .text-danger;
+  }
+  input{
+    @extend .is-invalid;
+  }
+}

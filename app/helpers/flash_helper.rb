@@ -1,5 +1,5 @@
 module FlashHelper
   def flash_message(message, klass)
-    content_tag :p, message, class: "flash #{klass}"
+    content_tag :div, message, class: "flash #{klass}", role: 'alert'
   end
 end

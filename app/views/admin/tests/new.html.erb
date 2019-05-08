@@ -1,3 +1,9 @@
-<h1><%= t('.new_test') %></h1>
+<div class='card col-lg-8 offset-lg-2 border rounded my-3 text-xs-center'>
+  <h1><%= t('.new_test') %></h1>
+  <div class='card-body'>
 
-<%= render 'form', test: @test %>
+    <%= render 'form', test: @test %>
+
+    <%= link_to t('.tests'), admin_tests_path, class: 'btn btn-secondary btn-block my-3' %>
+  </div>
+</div>

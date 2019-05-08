@@ -1,17 +1,21 @@
-<hr>
-<div class="nav nav-admin">
-  <h1 class="nav-admin title">
-    <%= link_to_unless_current t('title'), root_path %> |
-    <%= t('admin_panel') %>
-  </h1>
-  <div class='nav-admin user'>
-    <%= t('welcome_admin_html', email: current_user.email) %> |
-    <%= link_to_unless_current t('.edit_user'),  edit_user_registration_path %> |
-    <%= link_to_unless_current t('.logout'), destroy_user_session_path, method: :delete %>
+<nav class='navbar navbar-dark bg-dark navbar-expand-lg'>
+  <%= link_to t('title'), root_path, class: 'navbar-brand h1' %>
+  <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+    <span class='navbar-toggler-icon'></span>
+  </button>
+  <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+    <% if user_signed_in? %>
+      <span class='navbar-text'>
+        <%= t('welcome_admin_html', email: current_user.email) %>
+      </span>
+    <% end %>
+    <ul class='navbar-nav ml-auto'>
+      <li class='nav-item'>
+        <%= link_to t('.tests'), admin_tests_path, class: 'nav-link' %>
+      </li>
+      <li class='nav-item'>
+        <%= link_to t('.create_test'), new_admin_test_path, class: 'nav-link' %>
+      </li>
+    </ul>
   </div>
-  <div>
-    <%= link_to_unless_current t('.tests'), admin_tests_path %> |
-    <%= link_to_unless_current t('.create_test'), new_admin_test_path %>
-  </div>
-</div>
-<hr>
+</nav>

@@ -1,3 +1,12 @@
-<h1><%= t('.edit_test') %></h1>
+<div class='card col-lg-8 offset-lg-2 border rounded my-3 text-xs-center'>
+  <div class='card-body'>
+    <h1 class='card-title'><%= t('.edit_test') %></h1>
+    <%= render 'form', test: @test %>
 
-<%= render 'form', test: @test %>
+    <div class='btn-group my-3 btn-block' role='group'>
+      <%= link_to t('.tests'), admin_tests_path, class: 'btn btn-secondary' %>
+      <%= link_to t('.show'), admin_test_path(@test), class: 'btn btn-secondary' %>
+      <%= link_to t('.destroy'), admin_test_path(@test), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-secondary'  %>
+    </div>
+  </div>
+</div>

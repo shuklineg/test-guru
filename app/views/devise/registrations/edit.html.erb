@@ -1,51 +1,56 @@
-<h2><%= t('.edit_user') %></h2>
+<div class='col-lg-6 offset-lg-3 border rounded my-3 text-lg-center'>
+  <div class='h2'><%= t('.edit_user') %></div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class='form-group'>
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: User.human_attribute_name(:email) %>
+    </div>
+    <div class='form-row'>
+      <div class='form-group col-lg'>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, autocomplete: "given-name", class: 'form-control', placeholder: User.human_attribute_name(:first_name) %>
+      </div>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autocomplete: "given-name" %>
-  </div>
+      <div class='form-group col-lg'>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, autocomplete: "family-name", class: 'form-control', placeholder: User.human_attribute_name(:last_name) %>
+      </div>
+    </div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div><%= t('need_confirm')%> <%= resource.unconfirmed_email %></div>
+    <% end %>
 
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autocomplete: "family-name" %>
-  </div>
+    <div class='form-row'>
+      <div class='form-group col-lg'>
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: User.human_attribute_name(:password) %>
+        <small class='form-text text-muted'>
+          (<%= t('.leave_blank') %>)
+        </small>
+      </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <div class='form-group col-lg'>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: User.human_attribute_name(:password_confirmation) %>
+        <% if @minimum_password_length %>
+          <small class='form-text text-muted'>
+            (<%= t('.minimum_password_length', length: @minimum_password_length) %>)
+          </small>
+        <% end %>
+      </div>
+    </div>
+    <div class='form-group'>
+      <%= f.label :current_password %>
+      <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control', placeholder: User.human_attribute_name(:current_password) %>
+      <small class='form-text text-muted'>(<%= t('.need_your_password') %>)</small>
+    </div>
+    <%= f.submit t('.update'), class: 'btn btn-primary btn-block' %>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(<%= t('.leave_blank')%>)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em>(<%= t('.minimum_password_length', length: @minimum_password_length) %>)</em>
-    <% end %>
-  </div>
+  <div class='h5 mt-3'><%= t('.cancel_account_title') %></div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(<%= t('.need_your_password') %>)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit t('.update') %>
-  </div>
-<% end %>
-
-<h3><%= t('.cancel_account_title') %></h3>
-
-<%= button_to t('.cancel_account'), registration_path(resource_name), data: { confirm: t('dialogs.are_you_sure') }, method: :delete %>
+  <%= button_to t('.cancel_account'), registration_path(resource_name), data: { confirm: t('dialogs.are_you_sure') }, method: :delete, class: 'btn btn-danger btn-block my-3' %>
+</div>

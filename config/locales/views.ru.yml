@@ -11,6 +11,7 @@ ru:
         minimum_password_length: *minimum_password_length
         update: 'Сохранить изменения'
         need_your_password: 'введите текущий пароль для сохранения изменений'
+        need_confirm: 'Ожидается подтверждение для почтового адреса'
         cancel_account_title: 'Удаление учетной записи'
         cancel_account: 'Удалить'
     sessions:
@@ -38,12 +39,15 @@ ru:
         resend_confirmation_title: 'Отправить письмо с подтверждением повторно'
         resend_confirmation: 'Отправить'
   shared:
+    locales:
+      language: 'Язык'
     navigation:
       login: *login
       logout: &logout 'Выход'
       signup: 'Регистрация'
       tests: 'Тесты'
       edit_user: 'Редактировать учетную запись'
+      admin_panel: 'Панель администрирования'
     footer:
       description: 'Учебный проект в онлайн-школе'
     validation_errors:
@@ -64,6 +68,8 @@ ru:
       title: *test_passages_title
   tests:
     test:
+      level: 'Уровень'
+      questions_count: 'Количество вопросов'
       start: 'Начать'
     index:
       actions: 'Действия'
@@ -79,43 +85,63 @@ ru:
       test:
         edit: 'Редактировать'
         destroy: 'Удалить'
+        open: 'Открыть'
       index:
         actions: 'Действия'
         create: 'Создать тест'
       new:
         new_test: 'Создать тест'
+        tests: 'Список тестов'
         back: &back 'Назад'
       edit:
         edit_test: 'Редактировать тест'
-        back: *back
+        tests: 'Список тестов'
+        destroy: 'Удалить'
+        show: 'Открыть'
       show:
         tests: 'Тесты'
         new_test_question: 'Создать новый вопрос'
         actions: 'Действия'
+        destroy: 'Удалить'
+        edit: 'Редактировать'
+        questions: 'Список вопросов'
     questions:
       new:
         test: &test 'Назад к тесту'
+        question_title: '%{action} вопроса для теста "%{test}"'
+        create: 'Создание'
       edit:
         test: *test
+        question_title: '%{action} вопроса для теста "%{test}"'
+        edit: 'Редактирование'
+        show: 'Открыть'
+        destroy: 'Удалить'
       question:
         show: 'Просмотр'
-        delete: 'Удалить'
+        destroy: 'Удалить'
         edit: 'Редактировать'
       show:
         back: *back
         answers: 'Список ответов'
         new: 'Добавить ответ'
+        title: 'Вопрос'
+        destroy: 'Удалить'
+        actions: 'Действия'
+        edit: 'Редактировать'
+        test: 'Назад к тесту'
     answers:
       answer:
         show: &show 'Открыть'
         edit: 'Редактировать'
-        delete: 'Удалить'
+        destroy: 'Удалить'
       new:
         new_answer: 'Новый ответ'
         back: &back 'Назад'
+        question: 'Назад к вопросу'
       show:
         back: *back
       edit:
         edit_answer: 'Редактирование ответа'
-        show: *show
+        question: 'Назад к вопросу'
         back: *back
+        destroy: 'Удалить'

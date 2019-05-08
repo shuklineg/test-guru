@@ -1,11 +1,12 @@
-<footer>
-  <hr>
-  <div>
-    <%= current_year %>
-    <%= github_url(TestGuru::AUTHOR, TestGuru::PROJECT_GIT_URL) %>
-  </div>
-  <div>
-    <%= t('.description') %>
-    <%= link_to('Thinknetica', 'http://www.thinknetica.com', target: '_blank') %>
+<footer class='text-center card'>
+  <div class='card-body'>
+    <div>
+      <%= current_year %>
+      <%= github_url(TestGuru::AUTHOR, TestGuru::PROJECT_GIT_URL) %>
+    </div>
+    <div>
+      <%= t('.description') %>
+      <%= link_to('Thinknetica', 'http://www.thinknetica.com', target: '_blank') %>
+    </div>
   </div>
 </footer>
