@@ -59,11 +59,15 @@ en:
       next: 'Next'
       title: &test_passages_title 'Test "%{title}"'
       count: 'Total questions %{count}'
+      gist: 'Gist Question'
     result:
       tests: 'Tests list'
       test_failed: 'Test not passed'
       test_passed: 'Test passed'
       title: *test_passages_title
+    gist:
+      success: 'Gist was successfull created!'
+      failure: 'An error occurred with saving gist'
   tests:
     test:
       start: 'Start'

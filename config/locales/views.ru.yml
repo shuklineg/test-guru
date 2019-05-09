@@ -61,11 +61,15 @@ ru:
       next: 'Следующий'
       title: &test_passages_title 'Тест "%{title}"'
       count: 'Всего вопросов %{count}'
+      gist: 'Сохранить вопрос как Gist'
     result:
       tests: 'Список тестов'
       test_failed: 'Тест не пройден'
       test_passed: 'Тест успешно пройден'
       title: *test_passages_title
+    gist:
+      success: 'Gist успешно сохранен!'
+      failure: 'Во время сохранения gist произошла ошибка'
   tests:
     test:
       level: 'Уровень'

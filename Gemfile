@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.5'
 # Auth
 gem 'devise', '~> 4.0'
 
+# Networking
+gem 'faraday'
+
 # I18n
 gem 'rails-i18n', '~> 5.1'
 
