@@ -95,7 +95,7 @@ ru:
         tests: 'Список тестов'
         back: &back 'Назад'
       edit:
-        edit_test: 'Редактировать тест'_user
+        edit_test: 'Редактировать тест'
         tests: 'Список тестов'
         destroy: 'Удалить'
         show: 'Открыть'
