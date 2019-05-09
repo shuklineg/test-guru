@@ -72,7 +72,7 @@ ru:
       failure: 'Во время сохранения gist произошла ошибка'
   tests:
     test:
-      level: 'Уровен%{url}ь'
+      level: 'Уровень'
       questions_count: 'Количество вопросов'
       start: 'Начать'
     index:
@@ -95,7 +95,7 @@ ru:
         tests: 'Список тестов'
         back: &back 'Назад'
       edit:
-        edit_test: 'Редактировать тест'
+        edit_test: 'Редактировать тест'_user
         tests: 'Список тестов'
         destroy: 'Удалить'
         show: 'Открыть'
