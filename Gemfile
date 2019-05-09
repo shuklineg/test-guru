@@ -39,6 +39,12 @@ gem 'devise', '~> 4.0'
 # Networking
 gem 'faraday'
 
+# Github Octokit
+gem 'octokit', '~> 4.0'
+
+# .env
+gem 'dotenv-rails', groups: [:development, :test]
+
 # I18n
 gem 'rails-i18n', '~> 5.1'
 

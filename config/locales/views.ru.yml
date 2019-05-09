@@ -68,23 +68,20 @@ ru:
       test_passed: 'Тест успешно пройден'
       title: *test_passages_title
     gist:
-      success: 'Gist успешно сохранен!'
+      success: '%{url} успешно сохранен!'
       failure: 'Во время сохранения gist произошла ошибка'
   tests:
     test:
-      level: 'Уровень'
+      level: 'Уровен%{url}ь'
       questions_count: 'Количество вопросов'
       start: 'Начать'
     index:
       actions: 'Действия'
   admin:
     navigation:
-      login: *login
-      logout: *logout
-      signup: 'Регистрация'
       create_test: 'Создать тест'
       tests: 'Тесты'
-      edit_user: 'Редактировать учетную запись'
+      gists: 'Gists'
     tests:
       test:
         edit: 'Редактировать'

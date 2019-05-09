@@ -66,7 +66,7 @@ en:
       test_passed: 'Test passed'
       title: *test_passages_title
     gist:
-      success: 'Gist was successfull created!'
+      success: '%{url} was successfull created!'
       failure: 'An error occurred with saving gist'
   tests:
     test:
@@ -77,12 +77,9 @@ en:
       actions: 'Actions'
   admin:
     navigation:
-      login: *login
-      logout: *logout
-      signup: 'Registration'
       create_test: 'Create test'
       tests: 'Tests'
-      edit_user: *edit_account
+      gists: 'Gists'
     tests:
       test:
         edit: 'Edit'

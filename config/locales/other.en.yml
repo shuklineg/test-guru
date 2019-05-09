@@ -11,3 +11,5 @@ en:
   dialogs:
     are_you_sure: 'Are you sure?'
     you_not_authorized: 'You are not authorized for this page'
+  gist:
+    description: 'A question about %{title} from TestGuru'
