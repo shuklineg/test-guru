@@ -61,11 +61,15 @@ ru:
       next: 'Следующий'
       title: &test_passages_title 'Тест "%{title}"'
       count: 'Всего вопросов %{count}'
+      gist: 'Сохранить вопрос как Gist'
     result:
       tests: 'Список тестов'
       test_failed: 'Тест не пройден'
       test_passed: 'Тест успешно пройден'
       title: *test_passages_title
+    gist:
+      success: '%{url} успешно сохранен!'
+      failure: 'Во время сохранения gist произошла ошибка'
   tests:
     test:
       level: 'Уровень'
@@ -75,12 +79,9 @@ ru:
       actions: 'Действия'
   admin:
     navigation:
-      login: *login
-      logout: *logout
-      signup: 'Регистрация'
       create_test: 'Создать тест'
       tests: 'Тесты'
-      edit_user: 'Редактировать учетную запись'
+      gists: 'Gists'
     tests:
       test:
         edit: 'Редактировать'

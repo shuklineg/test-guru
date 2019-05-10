@@ -25,6 +25,10 @@ ru:
         first_name: 'Имя'
         last_name: 'Фамилия'
         current_password: 'Текущий пароль'
+      gist:
+        gistid: 'Gist ID'
+        question: 'Вопрос'
+        user: 'Пользователь'
     models:
       question: 'Вопрос'
       test: 'Тест'

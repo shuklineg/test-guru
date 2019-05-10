@@ -1,0 +1,10 @@
+<div class="table-responsive">
+  <table class='table table-striped'>
+    <tr>
+      <th class='col'><%= Gist.human_attribute_name(:question) %></th>
+      <th class='col'><%= Gist.human_attribute_name(:gistid) %></th>
+      <th class='col'><%= Gist.human_attribute_name(:user) %></th>
+    </tr>
+    <%= render @gists %>
+  </table>
+</div>

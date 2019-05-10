@@ -11,3 +11,5 @@ ru:
   dialogs:
     are_you_sure: 'Вы уверены?'
     you_not_authorized: 'Вы не имеете права доступа к этой странице'
+  gist:
+    description: 'Вопрос о %{title} из TestGuru'

@@ -38,7 +38,7 @@ questions = Question.create([
   { test: tests[1], body: 'Объект является экземпляром класса?' },
   { test: tests[2], body: 'Что вернет SELECT "Hello, world!"?' },
   { test: tests[3], body: 'Если оно выглядит как утка, плавает как утка и крякает как утка, то это ...' },
-  { test: tests[4], body: 'В каких block_given? возвращает true' },
+  { test: tests[4], body: 'В каких условиях block_given? возвращает true' },
   { test: tests[5], body: 'Зачем нужны миграции?' },
   { test: tests[6], body: 'Что означает аббривиатура ORM?' }
 ])

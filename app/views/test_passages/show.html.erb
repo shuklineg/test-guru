@@ -20,7 +20,10 @@
         <% end %>
       </ul>
     <div class='card-body'>
-      <%= form.submit t('.next'), class: 'btn btn-primary btn-lg btn-block' %>
+      <div class='btn-group-vertical btn-block btn-group-lg' role='group'>
+        <%= form.submit t('.next'), class: 'btn btn-primary' %>
+        <%= link_to t('.gist'), gist_test_passage_path(@test_passage), method: :post, class: 'btn btn-secondary' %>
+      </div>
     </div>
     <% end %>
   </div>
