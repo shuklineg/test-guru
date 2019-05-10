@@ -16,6 +16,18 @@
             <%= link_to t('.admin_panel'), admin_tests_path, class: 'nav-link' %>
           </li>
         <% end %>
+        <li class='nav-item dropdown'>
+          <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            Sort
+          </a>
+          <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+            <div class='dropdown-item sort-by pointer' data-sort-target='.tests-list' data-sort-elements='.test-item' data-sort-by='.test-title'>
+              By title
+              <%= octicon 'arrow-up', class: 'text-success hide' %>
+              <%= octicon 'arrow-down', class: 'text-success hide' %>
+            </div>
+          </div>
+        </li>
         <li class='nav-item'>
           <%= link_to t('.edit_user'),  edit_user_registration_path, class: 'nav-link' %>
         </li>

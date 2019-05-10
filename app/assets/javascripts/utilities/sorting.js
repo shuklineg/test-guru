@@ -1,6 +1,6 @@
 document.addEventListener('turbolinks:load', function(){
   var control = document.querySelector('.sort-by-title')
-  
+
   if (control) { control.addEventListener('click', sortRowsByTitle) }
 })
 
@@ -30,8 +30,6 @@ function sortRowsByTitle(){
   }
 
   var sortedTable = document.createElement(tableElement.tagName)
-  
-  sortedTable.appendChild(rows[0])
 
   for (var i = 0; i < sortedRows.length; i++) {
     sortedTable.appendChild(sortedRows[i])
