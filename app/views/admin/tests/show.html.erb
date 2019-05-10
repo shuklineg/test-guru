@@ -17,12 +17,16 @@
     <h4><%= t('.questions') %></h4>
     <div class='table-responsive'>
       <table class='table table-striped'>
-        <tr>
-          <th class='col'><%= Question.human_attribute_name(:body) %></th>
-          <th class='col'><%= Question.human_attribute_name('answers.size') %></th>
-          <th class='col'><%= t('.actions') %></th>
-        </tr>
-        <%= render @test.questions %>
+        <thead>
+          <tr>
+            <th class='col'><%= Question.human_attribute_name(:body) %></th>
+            <th class='col'><%= Question.human_attribute_name('answers.size') %></th>
+            <th class='col'><%= t('.actions') %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @test.questions %>
+        </tbody>
       </table>
     </div>
     <div class='btn-group my-5' role='group'>

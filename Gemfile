@@ -42,6 +42,9 @@ gem 'faraday'
 # Github Octokit
 gem 'octokit', '~> 4.0'
 
+# Octicons
+gem 'octicons_helper'
+
 # .env
 gem 'dotenv-rails', groups: [:development, :test]
 

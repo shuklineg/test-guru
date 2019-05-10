@@ -11,12 +11,16 @@
     <h4><%= t('.answers') %></h4>
     <div class='table-responsive'>
       <table class='table table-striped'>
-        <tr>
-          <th class='col'><%= Answer.human_attribute_name(:body) %></th>
-          <th class='col'><%= Answer.human_attribute_name(:correct) %></th>
-          <th class='col'><%= t('.actions') %></th>
-        </tr>
-        <%= render @question.answers %>
+        <thead>
+          <tr>
+            <th class='col'><%= Answer.human_attribute_name(:body) %></th>
+            <th class='col'><%= Answer.human_attribute_name(:correct) %></th>
+            <th class='col'><%= t('.actions') %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @question.answers %>
+        </tbody>
       </table>
     </div>
     <div class='btn-group my-5' role='group'>
