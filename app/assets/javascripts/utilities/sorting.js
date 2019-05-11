@@ -3,7 +3,7 @@ document.addEventListener('turbolinks:load', function() {
 
   if (control) { control.addEventListener('click', sortRowsByTitle) }
 
-  // Сортировка произвольных объектом см. sortingObjects.js
+  // Сортировка произвольных объектов см. sortingObjects.js
   sortingObjects({
     targetSelector: 'div#user-tests-list',
     elmSelector: 'div.test-list-item',
