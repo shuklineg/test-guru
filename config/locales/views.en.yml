@@ -48,6 +48,10 @@ en:
       tests: 'Tests'
       edit_user: *edit_account
       admin_panel: 'Admin panel'
+      sort: 'Sort'
+      by_title: 'by title'
+      by_category: 'by category'
+      by_level: 'by level'
     footer:
       description: 'Educational project in an online school'
     validation_errors:

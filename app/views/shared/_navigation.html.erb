@@ -18,11 +18,21 @@
         <% end %>
         <li class='nav-item dropdown'>
           <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-            Sort
+            <%= t('.sort') %>
           </a>
           <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
-            <div class='dropdown-item sort-by pointer' data-sort-target='.tests-list' data-sort-elements='.test-item' data-sort-by='.test-title'>
-              By title
+            <div class='dropdown-item pointer tests-order' id='sort-by-title'>
+              <%= t('.by_title') %>
+              <%= octicon 'arrow-up', class: 'text-success hide' %>
+              <%= octicon 'arrow-down', class: 'text-success hide' %>
+            </div>
+            <div class='dropdown-item pointer tests-order' id='sort-by-category'>
+              <%= t('.by_category') %>
+              <%= octicon 'arrow-up', class: 'text-success hide' %>
+              <%= octicon 'arrow-down', class: 'text-success hide' %>
+            </div>
+            <div class='dropdown-item pointer tests-order' id='sort-by-level'>
+              <%= t('.by_level') %>
               <%= octicon 'arrow-up', class: 'text-success hide' %>
               <%= octicon 'arrow-down', class: 'text-success hide' %>
             </div>

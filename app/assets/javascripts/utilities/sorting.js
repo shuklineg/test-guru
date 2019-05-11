@@ -2,6 +2,23 @@ document.addEventListener('turbolinks:load', function(){
   var control = document.querySelector('.sort-by-title')
 
   if (control) { control.addEventListener('click', sortRowsByTitle) }
+
+  // Сортировка произвольных объектом см. sortingObjects.js
+  sortingObjects({
+    targetSelector: 'div#user-tests-list',
+    elmSelector: 'div.test-list-item',
+    control: { selector: 'div#sort-by-title', orderBy: 'div.item-title', controlGroup: '.tests-order'}
+  })
+  sortingObjects({
+    targetSelector: 'div#user-tests-list',
+    elmSelector: 'div.test-list-item',
+    control: { selector: 'div#sort-by-level', orderBy: 'span.item-level', controlGroup: '.tests-order'}
+  })
+  sortingObjects({
+    targetSelector: 'div#user-tests-list',
+    elmSelector: 'div.test-list-item',
+    control: { selector: 'div#sort-by-category', orderBy: 'div.item-category', controlGroup: '.tests-order'}
+  })
 })
 
 function sortRowsByTitle(){

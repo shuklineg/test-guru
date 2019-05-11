@@ -3,3 +3,21 @@
   vertical-align: text-top;
   fill: currentColor;
 }
+
+.control-sorted-asc {
+  .octicon-arrow-up {
+    display: inline-block;
+  }
+  .octicon-arrow-down {
+    display: none;
+  }
+}
+
+.control-sorted-desc {
+  .octicon-arrow-up {
+    display: none;
+  }
+  .octicon-arrow-down {
+    display: inline-block;
+  }
+}

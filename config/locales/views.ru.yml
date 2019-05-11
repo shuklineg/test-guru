@@ -48,6 +48,10 @@ ru:
       tests: 'Тесты'
       edit_user: 'Редактировать учетную запись'
       admin_panel: 'Панель администрирования'
+      sort: 'Сортировка'
+      by_title: 'По названию'
+      by_category: 'По категории'
+      by_level: 'По уровню'
     footer:
       description: 'Учебный проект в онлайн-школе'
     validation_errors:
