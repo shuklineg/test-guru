@@ -32,8 +32,8 @@ function sortingObjects(options){
     for (var i = 0; i < nodes.length; i++) { sortedObjects.push(nodes[i]) }
 
     sortedObjects.sort(function(obj1, obj2) {
-      var text1 = obj1.querySelector(options.control.orderBy).textContent
-      var text2 = obj2.querySelector(options.control.orderBy).textContent
+      var text1 = obj1.querySelector(options.control.orderBy).textContent.trim()
+      var text2 = obj2.querySelector(options.control.orderBy).textContent.trim()
     
       if (text1 < text2) { return sortAsc ? -1 : 1 }
       if (text1 > text2) { return sortAsc ? 1 : -1 }

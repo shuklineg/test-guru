@@ -56,8 +56,8 @@ function sortRowsByTitle(){
 }
 
 function compareRowsAsc(row1, row2){
-  var text1 = row1.querySelector('td').textContent
-  var text2 = row2.querySelector('td').textContent
+  var text1 = row1.querySelector('td').textContent.trim()
+  var text2 = row2.querySelector('td').textContent.trim()
 
   if (text1 < text2) { return -1 }
   if (text1 > text2) { return 1 }
@@ -65,8 +65,8 @@ function compareRowsAsc(row1, row2){
 }
 
 function compareRowsDesc(row1, row2){
-  var text1 = row1.querySelector('td').textContent
-  var text2 = row2.querySelector('td').textContent
+  var text1 = row1.querySelector('td').textContent.trim()
+  var text2 = row2.querySelector('td').textContent.trim()
 
   if (text1 < text2) { return 1 }
   if (text1 > text2) { return -1 }
