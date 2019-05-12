@@ -16,6 +16,28 @@
             <%= link_to t('.admin_panel'), admin_tests_path, class: 'nav-link' %>
           </li>
         <% end %>
+        <li class='nav-item dropdown'>
+          <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            <%= t('.sort') %>
+          </a>
+          <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+            <div class='dropdown-item pointer tests-order' id='sort-by-title'>
+              <%= t('.by_title') %>
+              <%= octicon 'arrow-up', class: 'text-success hide' %>
+              <%= octicon 'arrow-down', class: 'text-success hide' %>
+            </div>
+            <div class='dropdown-item pointer tests-order' id='sort-by-category'>
+              <%= t('.by_category') %>
+              <%= octicon 'arrow-up', class: 'text-success hide' %>
+              <%= octicon 'arrow-down', class: 'text-success hide' %>
+            </div>
+            <div class='dropdown-item pointer tests-order' id='sort-by-level'>
+              <%= t('.by_level') %>
+              <%= octicon 'arrow-up', class: 'text-success hide' %>
+              <%= octicon 'arrow-down', class: 'text-success hide' %>
+            </div>
+          </div>
+        </li>
         <li class='nav-item'>
           <%= link_to t('.edit_user'),  edit_user_registration_path, class: 'nav-link' %>
         </li>
