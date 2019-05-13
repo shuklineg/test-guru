@@ -1,12 +1,12 @@
 document.addEventListener('turbolinks:load', function(){
   $('.resource-errors').each(function() {
-    formInlineHandler(this.dataset.resourceId)
+    formInlineHandler($(this).data('resource-id'))
   })
 
   $('.form-inline-link').on('click', function(event){
     event.preventDefault()
 
-    var testId = this.dataset.testId
+    var testId = $(this).data('test-id')
 
     if ($(this).hasClass('form-inline-cancel')) {
       var text = $('.test-title[data-test-id="' + testId + '"]').text()

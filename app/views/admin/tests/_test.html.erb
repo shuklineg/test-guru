@@ -3,7 +3,7 @@
     <%= render 'form_inline', test: test == @test ? @test : test %>
     <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id} %>
     <%= content_tag :a, href: '#',
-                        class: 'btn btn-outline-primary form-inline-link',
+                        class: 'btn btn-outline-primary form-inline-link m-2',
                         data: { test_id: test.id } do %>
       <%= octicon('pencil') %>
     <% end %>
