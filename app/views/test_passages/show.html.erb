@@ -22,7 +22,7 @@
         <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
           <li class='list-group-item form-check'>
             <div class='custom-control custom-checkbox m-3'>
-              <%= b.check_box id: 'answer_ids_#{b.object.id}', class: 'custom-control-input' %>
+              <%= b.check_box id: "answer_ids_#{b.object.id}", class: 'custom-control-input' %>
               <%= b.label class: 'custom-control-label' %>
             </div>
           </li>

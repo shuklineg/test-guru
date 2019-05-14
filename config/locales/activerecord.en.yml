@@ -3,6 +3,8 @@ en:
     attributes:
       question:
         body: 'Body'
+      question/answers:
+        size: 'Answers count'
       test:
         level: 'Level'
         title: 'Title'
