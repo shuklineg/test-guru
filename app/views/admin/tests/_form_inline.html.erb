@@ -1,0 +1,19 @@
+<%= form_with(model: [:admin, test],
+              url: update_inline_admin_test_path(test),
+              local: true,
+              html: { style: 'display: none' },
+              class: 'form-inline',
+              data: { test_id: test.id }) do |form| %>
+  <%= form.text_field :title, class: 'form-control', placeholder: Test.human_attribute_name(:title) %>
+  <div class='btn-group m-2'>
+    <%= form.button class: 'btn btn-outline-primary' do %>
+      <%= octicon('check') %>
+    <% end %>
+    <%= content_tag :a, href: '#',
+                        class: 'btn btn-outline-secondary form-inline-link form-inline-cancel',
+                        style: 'display: none',
+                        data: { test_id: test.id } do %>
+      <%= octicon('x') %>
+    <% end %>
+  </div>
+<% end %>
