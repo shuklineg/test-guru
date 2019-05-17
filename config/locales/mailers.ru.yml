@@ -2,3 +2,6 @@ ru:
   tests_mailer:
     completed_test:
       subject: 'Вы завершили тест на TestGuru!'
+  feedbacks_mailer:
+    send_feedback:
+      subject: 'Письмо обратной связи'

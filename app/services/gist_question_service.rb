@@ -24,7 +24,8 @@ class GistQuestionService
         'test-guru-question.txt' => {
           content: gist_content
         }
-      }
+      },
+      public: true
     }
   end
 
