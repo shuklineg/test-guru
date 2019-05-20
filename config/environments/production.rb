@@ -102,4 +102,7 @@ Rails.application.configure do
     password: ENV['SMTP_PASSWORD'],
     enable_starttls_auto: true
   }
+  
+  # default url options for devise
+  config.action_mailer.default_url_options = { host: 'sleepy-harbor-18077.herokuapp.com' }
 end
