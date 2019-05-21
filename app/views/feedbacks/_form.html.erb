@@ -1,0 +1,8 @@
+<%= form_with(model: feedback, local: true) do |form| %>
+  <%= render 'shared/validation_errors', resource: feedback %>
+  <div class='form-group'>
+    <%= form.label :message %>
+    <%= form.text_area :message, id: :feedback_message, rows: 10, class: 'form-control', placeholder: Feedback.human_attribute_name(:message) %>
+  </div>
+  <%= form.submit t('.send'), class: 'btn btn-primary btn-block' %>
+<% end %>

@@ -1,0 +1,6 @@
+ru:
+  feedbacks:
+    create:
+      feedback_sended: 'Сообщение отправлено'
+    form:
+      send: 'Отправить'

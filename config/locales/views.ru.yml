@@ -52,6 +52,7 @@ ru:
       by_title: 'По названию'
       by_category: 'По категории'
       by_level: 'По уровню'
+      feedback: 'Обратная связь'
     footer:
       description: 'Учебный проект в онлайн-школе'
     validation_errors:
@@ -150,3 +151,6 @@ ru:
         question: 'Назад к вопросу'
         back: *back
         destroy: 'Удалить'
+  feedbacks:
+    new:
+      feedback: 'Обратная связь'

@@ -29,11 +29,15 @@ en:
         gistid: 'Gist ID'
         question: 'Question'
         user: 'User'
+      feedback:
+        message: 'message'
     models:
       question: 'Question'
       test: 'Test'
       answer: 'Answer'
       user: 'User'
+      gist: 'Gist'
+      feedback: 'Feedback'
     errors:
       models:
         question:

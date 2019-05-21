@@ -29,11 +29,15 @@ ru:
         gistid: 'Gist ID'
         question: 'Вопрос'
         user: 'Пользователь'
+      feedback:
+        message: 'Сообщение'
     models:
       question: 'Вопрос'
       test: 'Тест'
       answer: 'Ответ'
       user: 'Пользователь'
+      gist: 'Gist'
+      feedback: 'Обратная связь'
     errors:
       models:
         question:

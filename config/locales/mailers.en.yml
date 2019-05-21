@@ -2,3 +2,6 @@ en:
   tests_mailer:
     completed_test:
       subject: 'You passed test on TestGuru!'
+  feedbacks_mailer:
+    send_feedback:
+      subject: 'Feedback mail'

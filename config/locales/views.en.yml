@@ -52,6 +52,7 @@ en:
       by_title: 'by title'
       by_category: 'by category'
       by_level: 'by level'
+      feedback: 'Feedback'
     footer:
       description: 'Educational project in an online school'
     validation_errors:
@@ -148,3 +149,6 @@ en:
         question: 'Question'
         show: 'Show'
         back: *back
+  feedbacks:
+    new:
+      feedback: 'Feedback'
