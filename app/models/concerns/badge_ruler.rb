@@ -30,7 +30,7 @@ module BadgeRuler
 
   module ClassMethods
     def add_rule(method_name, options = {})
-      title = I18n.t(method_name, scope: [self.class.to_s.downcase, :rules])
+      title = I18n.t(method_name, scope: [to_s.downcase, :rules])
       rules[method_name] = { title: title, options: options }
       define_methods(options[:params])
     end
