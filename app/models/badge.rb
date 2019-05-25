@@ -3,10 +3,13 @@ class Badge < ApplicationRecord
 
   belongs_to :category, optional: true
   belongs_to :test, optional: true
+  has_and_belongs_to_many :users
 
   validates :caption, presence: true
+  validates :image, presence: true
 
   add_rule :complite_test, params: [:test]
+  add_rule :complite_any_test
   add_rule :complite_category, params: [:category]
   add_rule :complite_level, params: [:level]
   add_rule :first_try_test, params: [:test]
@@ -22,7 +25,9 @@ class Badge < ApplicationRecord
 
   private
 
-  def complite_test(test_passage); end
+  def complite_test(test_passage) end
+
+  def complite_any_test(test_passage); end
 
   def complite_category(test_passage); end
 

@@ -7,9 +7,9 @@ module BadgeRuler
   end
 
   def reward!(test_passage)
-    return unless respond_to? rule_name
+    return unless respond_to?(rule_name, true)
 
-    # TODO: add badge to user if send(rule_name, test_passage)
+    test_passage.user.badges << self if send(rule_name, test_passage)
   end
 
   def rule

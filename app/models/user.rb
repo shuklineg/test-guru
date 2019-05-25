@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :own_tests, class_name: 'Test', foreign_key: :author_id, dependent: :nullify
   has_many :gists
   has_many :feedbacks
+  has_and_belongs_to_many :badges
 
   def tests_by_level(level)
     tests.where(level: level)
