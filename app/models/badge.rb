@@ -23,6 +23,10 @@ class Badge < ApplicationRecord
   validates :test, presence: true, if: :has_test?
   validates :category, presence: true, if: :has_category?
 
+  def self.reward!(test_passage)
+    all.each { |badge| badge.reward!(test_passage) }
+  end
+
   private
 
   def complite_test(test_passage) end
