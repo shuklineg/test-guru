@@ -50,10 +50,11 @@ module BadgeRuler
       return unless params
 
       params.each do |param|
-        next if respond_to? param
+        method_name = "has_#{param}?".to_sym
+        next if respond_to?(method_name, true)
 
-        define_method("has_#{param}?".to_sym) do
-          self.params.include? param
+        define_method(method_name) do
+          self.params.include?(param)
         end
       end
     end
