@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'tests#index'
 
+    resources :badges
+
     resources :tests do
       patch :update_inline, on: :member
 

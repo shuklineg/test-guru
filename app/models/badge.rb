@@ -46,7 +46,7 @@ class Badge < ApplicationRecord
   def complite_level(test_passage)
     user = test_passage.user
 
-    test_passage.passed? &&  user.test_by_level(level).test_ids.sort.uniq == Test.where(level: level).ids
+    test_passage.passed? && user.test_by_level(level).test_ids.sort.uniq == Test.where(level: level).ids
   end
 
   def first_try_test(test_passage)
