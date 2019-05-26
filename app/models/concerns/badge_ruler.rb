@@ -24,6 +24,8 @@ module BadgeRuler
     options[:params] || []
   end
 
+  private
+
   def rule_not_selected
     errors.add(:rule) if rule == {}
   end
