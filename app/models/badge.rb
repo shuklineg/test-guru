@@ -14,6 +14,7 @@ class Badge < ApplicationRecord
   add_rule :complite_level, params: [:level]
   add_rule :first_try_test, params: [:test]
   add_rule :first_try_any_test
+  add_rule :complite_any_category
 
   validates :level, presence: true, if: :has_level?
   validates :level,
@@ -34,9 +35,13 @@ class Badge < ApplicationRecord
   end
 
   def complite_category
-    return false if @test.category != category
+    return false if @test_passage.category != category
 
     @test_passage.passed? && category.passed?(@user)
+  end
+
+  def complite_any_category
+    @test_passage.passed? && @test_passage.category.passed?(@user)
   end
 
   def complite_level
