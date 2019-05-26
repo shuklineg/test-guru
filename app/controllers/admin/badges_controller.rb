@@ -8,7 +8,7 @@ class Admin::BadgesController < Admin::BaseController
   def show; end
 
   def new
-    @badge = Badge.new
+    @badge = Badge.new(badge_params)
   end
 
   def create

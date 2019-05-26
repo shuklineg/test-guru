@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   resources :feedbacks, only: %i[new create]
 
+  resources :badges, only: %i[index]
+
   namespace :admin do
     root 'tests#index'
 

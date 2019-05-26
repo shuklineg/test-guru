@@ -1,1 +1,33 @@
-<%= badge_tag @badge %>
+<div class='card col-lg-8 offset-lg-2'>
+  <div class="card-body">
+    <h3 class='card-title'><%= @badge.caption %></h3>
+    <%= image_tag @badge.image %>
+
+    <dl class='row'>
+      <dt class='col-lg-3'><%= Badge.human_attribute_name(:rule_name) %> </dt>
+      <dd class='col-lg-9'><%= @badge.rule[:title] %></dd>
+
+      <% if @badge.has_category? %>
+        <dt class='col-lg-3'><%= Badge.human_attribute_name(:category) %></dt>
+        <dd class='col-lg-9'><%= @badge.category.title %></dd>
+      <% end %>
+
+      <% if @badge.has_test? %>
+        <dt class='col-lg-3'><%= Badge.human_attribute_name(:test) %> </dt>
+        <dd class='col-lg-9'><%= @badge.test.title %></dd>
+      <% end %>
+
+      <% if @badge.has_level? %>
+        <dt class='col-lg-3'><%= Badge.human_attribute_name(:level) %></dt>
+        <dd class='col-lg-9'><%= @badge.level %></dd>
+      <% end %>
+    </dl>
+
+    <div class='btn-group my-5' role='group'>
+      <%= link_to t('.badges'), admin_badges_path, class: 'btn btn-primary' %>
+      <%= link_to t('.edit'), edit_admin_badge_path(@badge), class: 'btn btn-secondary' %>
+      <%= link_to t('.destroy'), admin_badges_path(@badge), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-danger'  %>
+    </div>
+  </div>
+</div>
+

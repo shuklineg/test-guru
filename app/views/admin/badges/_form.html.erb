@@ -6,23 +6,30 @@
   </div>
   <div class='form-group'>
     <%= form.label :rule_name %>
-    <%= form.select :rule_name, Badge.rules.collect {|key, value| [ value[:title], key ] }, {}, { class: 'form-control custom-select custom-select-lg' } %>
+    <div><%= @badge.rule[:title] %></div>
+    <%= form.hidden_field :rule_name %>
   </div>
   <div class='form-group'>
     <%= form.label :image %>
     <%= form.select :image, Badge.images, {}, { class: 'form-control custom-select custom-select-lg' } %>
   </div>
-  <div class='form-group'>
-    <%= form.label :category %>
-    <%= form.collection_select :category_id, Category.all, :id, :title, {prompt: true}, {class: 'form-control'} %>
-  </div>
-  <div class='form-group'>
-    <%= form.label :test %>
-    <%= form.collection_select :test_id, Test.all, :id, :title, {prompt: true}, {class: 'form-control'} %>
-  </div>
-  <div class='form-group'>
-    <%= form.label :level %>
-    <%= form.text_field :level, id: :badge_level, class: 'form-control' %>
-  </div>
+  <% if @badge.has_category? %>
+    <div class='form-group'>
+      <%= form.label :category %>
+      <%= form.collection_select :category_id, Category.all, :id, :title, {prompt: true}, {class: 'form-control'} %>
+    </div>
+  <% end %>
+  <% if @badge.has_test? %>
+    <div class='form-group'>
+      <%= form.label :test %>
+      <%= form.collection_select :test_id, Test.all, :id, :title, {prompt: true}, {class: 'form-control'} %>
+    </div>
+  <% end %>
+  <% if @badge.has_level? %>
+    <div class='form-group'>
+      <%= form.label :level %>
+      <%= form.text_field :level, id: :badge_level, class: 'form-control' %>
+    </div>
+  <% end %>
   <%= form.submit class: 'btn btn-primary btn-block' %>
 <% end %>

@@ -13,4 +13,13 @@
     </tbody>
   </table>
 </div>
-<%= link_to t('.create'), new_admin_badge_path, class: 'btn btn-primary m-3' %>
+<div class='dropup'>
+  <button class='btn btn-primary dropdown-toggle btn-primary m-3' type='button' id='dropdownRuleButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+    <%= t('.create') %>
+  </button>
+  <div class='dropdown-menu' aria-labelledby='dropdownRuleButton'>
+    <% Badge.rules.each do |rule, options| %>
+      <%= link_to options[:title], new_admin_badge_path(badge: { rule_name: rule } ), class: 'dropdown-item' %>
+    <% end %>
+  </div>
+</div>
