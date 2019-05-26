@@ -27,7 +27,7 @@ module BadgeRuler
   private
 
   def rule_not_selected
-    errors.add(:rule) if rule == {}
+    errors.add(:rule_name) if rule == {}
   end
 
   module ClassMethods
@@ -44,6 +44,14 @@ module BadgeRuler
 
     def rules
       @rules ||= {}
+    end
+
+    def reward!(test_passage)
+      all.each { |badge| badge.reward!(test_passage) }
+    end
+
+    def images
+      Dir.glob('app/assets/images/badges/*').map { |image| [File.basename(image), image.gsub('app/assets/images/', '')] }
     end
 
     private

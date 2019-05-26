@@ -1,0 +1,16 @@
+<div class="table-responsive">
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th class='col'><%= Badge.human_attribute_name(:caption) %></th>
+        <th class='col'><%= Badge.human_attribute_name(:image) %></th>
+        <th class='col'><%= Badge.human_attribute_name(:rule_name) %></th>
+        <th class='col'><%= t('.actions') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @badges %>
+    </tbody>
+  </table>
+</div>
+<%= link_to t('.create'), new_admin_badge_path, class: 'btn btn-primary m-3' %>
