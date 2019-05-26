@@ -9,7 +9,10 @@ module BadgeRuler
   def reward!(test_passage)
     return unless respond_to?(rule_name, true)
 
-    test_passage.user.badges << self if send(rule_name, test_passage)
+    @test_passage = test_passage
+    @test = test_passage.test
+    @user = test_passage.user
+    test_passage.user.badges << self if send(rule_name)
   end
 
   def rule

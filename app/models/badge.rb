@@ -25,33 +25,31 @@ class Badge < ApplicationRecord
 
   private
 
-  def complite_test(test_passage)
-    true if test_passage.passed? && test_passage.test == test
+  def complite_test
+    true if @test_passage.passed? && @test == test
   end
 
-  def complite_any_test(test_passage)
-    true if test_passage.passed?
+  def complite_any_test
+    true if @test_passage.passed?
   end
 
-  def complite_category(test_passage)
-    return false if test_passage.category != category
+  def complite_category
+    return false if @test.category != category
 
-    test_passage.passed? && category.passed?(test_passage.user)
+    @test_passage.passed? && category.passed?(@user)
   end
 
-  def complite_level(test_passage)
-    user = test_passage.user
-
-    test_passage.passed? && user.test_by_level(level).test_ids.sort.uniq == Test.where(level: level).ids
+  def complite_level
+    @test_passage.passed? && @user.test_by_level(level).test_ids.sort.uniq == Test.where(level: level).ids
   end
 
-  def first_try_test(test_passage)
-    return false if test_passage.test != test
+  def first_try_test
+    return false if @test != test
 
-    test_passage.passed? && TestPassage.where(test: test_passage.test).count == 1
+    @test_passage.passed? && @user.test_passages.where(test_id: @test_passage.test.id).count == 1
   end
 
-  def first_try_any_test(test_passage)
-    test_passage.passed? && TestPassage.where(test: test_passage.test).count == 1
+  def first_try_any_test
+    @test_passage.passed? && @user.test_passages.where(test_id: @test_passage.test.id).count == 1
   end
 end
