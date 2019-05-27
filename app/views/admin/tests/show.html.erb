@@ -8,6 +8,9 @@
       <dt class='col-lg-3'><%= Test.human_attribute_name(:category) %></dt>
       <dd class='col-lg-9'><%= @test.category.title %></dd>
 
+      <dt class='col-lg-3'><%= Test.human_attribute_name(:timer) %></dt>
+      <dd class='col-lg-9'><%= @test.timer %></dd>
+
       <dt class='col-lg-3'><%= Test.human_attribute_name(:author) %></dt>
       <dd class='col-lg-9'><%= mail_to_user(@test.author) %></dd>
 
