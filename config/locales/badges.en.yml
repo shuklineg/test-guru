@@ -1,0 +1,46 @@
+en:
+  badge:
+    rules:
+      complete_test: 'Complete a specific test'
+      complete_any_test: 'Complete any test'
+      complete_category: 'Complete a specific category'
+      complete_level: 'Complete all tests at a given level'
+      first_try_test: 'Complete a specific test on the first try'
+      first_try_any_test: 'Complete any test on the first try'
+      complete_any_category: 'Complete any category'
+  admin:
+    navigation:
+      badges: 'Badges'
+    badges:
+      index:
+        actions: 'Actions'
+        create: 'Create'
+      new:
+        badges: 'Badges'
+      edit:
+        badges: 'Badges'
+        show: 'Open'
+        destroy: 'Delete'
+      show:
+        badges: 'Badges'
+        edit: 'Edit'
+        destroy: 'Delete'
+      badge:
+        show: 'Open'
+        edit: 'Edit'
+        destroy: 'Delete'
+  activerecord:
+    attributes:
+      badge:
+        caption: 'Caption'
+        image: 'Image'
+        rule_name: 'Rule'
+        params: 'Params'
+        category: 'Category'
+        test: 'Test'
+        level: 'level'
+    models:
+      badge: 'Badge'
+  shared:
+    navigation:
+      badges: 'Badges'

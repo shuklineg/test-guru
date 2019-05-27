@@ -8,13 +8,13 @@ class Badge < ApplicationRecord
   validates :caption, presence: true
   validates :image, presence: true
 
-  add_rule :complite_test, params: [:test]
-  add_rule :complite_any_test
-  add_rule :complite_category, params: [:category]
-  add_rule :complite_level, params: [:level]
+  add_rule :complete_test, params: [:test]
+  add_rule :complete_any_test
+  add_rule :complete_category, params: [:category]
+  add_rule :complete_level, params: [:level]
   add_rule :first_try_test, params: [:test]
   add_rule :first_try_any_test
-  add_rule :complite_any_category
+  add_rule :complete_any_category
 
   validates :level, presence: true, if: :has_level?
   validates :level,
@@ -26,35 +26,31 @@ class Badge < ApplicationRecord
 
   private
 
-  def complite_test
-    true if @test_passage.passed? && @test == test
+  def complete_test
+    @test == test && complete_any_test
   end
 
-  def complite_any_test
-    true if @test_passage.passed?
+  def complete_any_test
+    @test_passage.passed?
   end
 
-  def complite_category
-    return false if @test_passage.category != category
-
-    @test_passage.passed? && category.passed?(@user)
+  def complete_category
+    @test_passage.category == category && complete_any_category
   end
 
-  def complite_any_category
-    @test_passage.passed? && @test_passage.category.passed?(@user)
+  def complete_any_category
+    @test_passage.passed? && @test_passage.category.complete?(@user)
   end
 
-  def complite_level
+  def complete_level
     @test_passage.passed? && @user.test_by_level(level).test_ids.sort.uniq == Test.where(level: level).ids
   end
 
   def first_try_test
-    return false if @test != test
-
-    @test_passage.passed? && @user.test_passages.where(test_id: @test_passage.test.id).count == 1
+    @test == test && first_try_any_test
   end
 
   def first_try_any_test
-    @test_passage.passed? && @user.test_passages.where(test_id: @test_passage.test.id).count == 1
+    @test_passage.passed? && @user.test_passages.where(test: @test_passage.test).count == 1
   end
 end

@@ -5,7 +5,7 @@
 
     <dl class='row'>
       <dt class='col-lg-3'><%= Badge.human_attribute_name(:rule_name) %> </dt>
-      <dd class='col-lg-9'><%= @badge.rule[:title] %></dd>
+      <dd class='col-lg-9'><b><%= @badge.rule[:title] %></b></dd>
 
       <% if @badge.has_category? %>
         <dt class='col-lg-3'><%= Badge.human_attribute_name(:category) %></dt>

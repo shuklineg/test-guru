@@ -1,10 +1,11 @@
 <tr>
   <td><%= badge.caption %></td>
-  <td><%= badge.image %></td>
+  <td><%= image_tag badge.image %></td>
   <td><%= badge.rule[:title] %></td>
+  <td><%= badge.params.join(',') %></td>  
   <td>
     <div class='btn-group' role='group'>
-      <%= link_to t('.open'), admin_badge_path(badge), class: 'btn btn-primary' %>
+      <%= link_to t('.show'), admin_badge_path(badge), class: 'btn btn-primary' %>
       <%= link_to t('.edit'), edit_admin_badge_path(badge), class: 'btn btn-secondary' %>
       <%= link_to t('.destroy'), admin_badge_path(badge), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-danger'  %>
     </div>

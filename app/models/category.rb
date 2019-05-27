@@ -6,7 +6,7 @@ class Category < ApplicationRecord
   validates :title, presence: true
   validates :title, uniqueness: true
 
-  def passed?(user)
-    true if test_passages.where(user: user).select(&:passed?).map(&:test_id).sort.uniq == test_ids
+  def complete?(user)
+    test_passages.where(user: user).select(&:passed?).map(&:test_id).sort.uniq == test_ids
   end
 end

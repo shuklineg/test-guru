@@ -1,0 +1,46 @@
+ru:
+  badge:
+    rules:
+      complete_test: 'Завершить определенный тест'
+      complete_any_test: 'Завершить любой тест'
+      complete_category: 'Завершить определенную категорию'
+      complete_level: 'Завершить все тесты заданного уровня'
+      first_try_test: 'Завершить определенный тест с первой попытки'
+      first_try_any_test: 'Завершить любой тест с первой попытки'
+      complete_any_category: 'Завершить любую категорию'
+  admin:
+    navigation:
+      badges: 'Бейджи'
+    badges:
+      index:
+        actions: 'Действия'
+        create: 'Создать'
+      new:
+        badges: 'Бейджи'
+      edit:
+        badges: 'Бейджи'
+        show: 'Открыть'
+        destroy: 'Удалить'
+      show:
+        badges: 'Бейджи'
+        edit: 'Редактировать'
+        destroy: 'Удалить'
+      badge:
+        show: 'Открыть'
+        edit: 'Редактировать'
+        destroy: 'Удалить'
+  activerecord:
+    attributes:
+      badge:
+        caption: 'Заголовок'
+        image: 'Изображение'
+        rule_name: 'Правило'
+        params: 'Параметры'
+        category: 'Категория'
+        test: 'Тест'
+        level: 'Уровень'
+    models:
+      badge: 'Бейдж'
+  shared:
+    navigation:
+      badges: 'Бейджи'
