@@ -11,4 +11,7 @@ Learning Project for Rails Basics.
   * Answer
   * User
   * TestPassage
+  * Gist
+  * Feedback
+  * Badge
   
