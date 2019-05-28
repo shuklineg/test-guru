@@ -2,11 +2,10 @@
   <table class='table table-striped'>
     <thead>
       <tr>
-        <th class='col'><%= Badge.human_attribute_name(:caption) %></th>
-        <th class='col'><%= Badge.human_attribute_name(:image) %></th>
-        <th class='col'><%= Badge.human_attribute_name(:rule_name) %></th>
-        <th class='col'><%= Badge.human_attribute_name(:params) %></th>
-        <th class='col'><%= t('.actions') %></th>
+        <th class=''><%= Badge.human_attribute_name(:caption) %></th>
+        <th class=''><%= Badge.human_attribute_name(:image) %></th>
+        <th class='col-md-6'><%= Badge.human_attribute_name(:rule) %></th>
+        <th class=''><%= t('.actions') %></th>
       </tr>
     </thead>
     <tbody>
@@ -14,13 +13,4 @@
     </tbody>
   </table>
 </div>
-<div class='dropup'>
-  <button class='btn btn-primary dropdown-toggle btn-primary m-3' type='button' id='dropdownRuleButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-    <%= t('.create') %>
-  </button>
-  <div class='dropdown-menu' aria-labelledby='dropdownRuleButton'>
-    <% Badge.rules.each do |rule, options| %>
-      <%= link_to options[:title], new_admin_badge_path(badge: { rule_name: rule } ), class: 'dropdown-item' %>
-    <% end %>
-  </div>
-</div>
+<%= link_to t('.create'), new_admin_badge_path, class: 'btn btn-primary' %>

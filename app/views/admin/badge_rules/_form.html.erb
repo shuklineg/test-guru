@@ -1,0 +1,52 @@
+<h1><%= t(@badge.rule.rule_type, scope: [:badge_rule, :type])%></h1>
+<%= form_with(model: [@badge.rule], url: admin_badge_rule_path, local: true) do |form| %>
+  <%= render 'shared/validation_errors', resource: @badge.rule %>
+  <%= form.hidden_field :rule_type %>
+
+  <div class='form-row'>
+    <div class='custom-control custom-checkbox col-lg-4 m-3'>
+      <%= form.check_box :unique, id: :badge_rule_unique, class: 'custom-control-input' %>
+      <%= form.label :unique, class: 'custom-control-label' %>
+    </div>
+    <% if @badge.rule.options.params.include? :first_try %>
+      <div class='custom-control custom-checkbox col-lg-4 m-3'>
+        <%= form.check_box :first_try, id: :badge_rule_first_try, class: 'custom-control-input' %>
+        <%= form.label :first_try, class: 'custom-control-label' %>
+      </div>
+    <% end %>
+    <% if @badge.rule.options.params.include? :level %>
+      <div class='custom-control custom-checkbox col-lg-4 m-3'>
+        <%= form.label :level %>
+        <%= form.text_field :level, id: :test_level, class: 'form-control', placeholder: Test.human_attribute_name(:level) %>
+      </div>
+    <% end %>
+  </div>
+
+  <% if @badge.rule.options.resources.include? Test %>
+    <div class='form-group m-3'>
+      <%= form.label :resource %>
+      <%= form.collection_select :resource_id, Test.all, :id, :title, {include_blank: true}, {class: 'form-control'} %>
+      <small class='form-text text-muted'>
+        (<%= t('.leave_blank_if_any') %>)
+      </small>
+      <%= form.hidden_field :resource_type, value: 'Test' %>
+    </div>
+  <% end %>
+
+  <% if @badge.rule.options.resources.include? Category %>
+    <div class='form-group m-3'>
+      <%= form.label :resource %>
+      <%= form.collection_select :resource_id, Category.all, :id, :title, {include_blank: true}, {class: 'form-control'} %>
+      <small class='form-text text-muted'>
+        (<%= t('.leave_blank_if_any') %>)
+      </small>      
+      <%= form.hidden_field :resource_type, value: 'Category' %>
+    </div>
+  <% end %>
+
+  <% if @badge.rule.rule_type == 'level' %>
+
+  <% end %>
+
+  <%= form.submit class: 'btn btn-primary btn-block' %>
+<% end %>

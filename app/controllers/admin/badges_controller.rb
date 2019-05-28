@@ -8,7 +8,7 @@ class Admin::BadgesController < Admin::BaseController
   def show; end
 
   def new
-    @badge = Badge.new(badge_params)
+    @badge = Badge.new
   end
 
   def create
@@ -43,6 +43,6 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def badge_params
-    params.require(:badge).permit(:caption, :image, :category_id, :test_id, :level, :rule_name)
+    params.require(:badge).permit(:caption, :image)
   end
 end

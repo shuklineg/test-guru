@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_25_153355) do
+ActiveRecord::Schema.define(version: 2019_05_28_042843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,17 +24,27 @@ ActiveRecord::Schema.define(version: 2019_05_25_153355) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
+  create_table "badge_rules", force: :cascade do |t|
+    t.string "rule_type", null: false
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.bigint "badge_id", null: false
+    t.integer "level"
+    t.boolean "first_try", default: false, null: false
+    t.boolean "unique", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["badge_id"], name: "index_badge_rules_on_badge_id"
+    t.index ["level"], name: "index_badge_rules_on_level"
+    t.index ["resource_type", "resource_id"], name: "index_badge_rules_on_resource_type_and_resource_id"
+    t.index ["rule_type"], name: "index_badge_rules_on_rule_type"
+  end
+
   create_table "badges", force: :cascade do |t|
     t.string "caption", null: false
     t.string "image", null: false
-    t.bigint "category_id"
-    t.bigint "test_id"
-    t.string "rule_name"
-    t.integer "level", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_badges_on_category_id"
-    t.index ["test_id"], name: "index_badges_on_test_id"
   end
 
   create_table "badges_users", id: false, force: :cascade do |t|
@@ -128,8 +138,6 @@ ActiveRecord::Schema.define(version: 2019_05_25_153355) do
   end
 
   add_foreign_key "answers", "questions"
-  add_foreign_key "badges", "categories"
-  add_foreign_key "badges", "tests"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"

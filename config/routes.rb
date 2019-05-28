@@ -25,7 +25,9 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'tests#index'
 
-    resources :badges
+    resources :badges do
+      resource :badge_rule, as: :rule, except: :show
+    end
 
     resources :tests do
       patch :update_inline, on: :member
