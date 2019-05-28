@@ -14,4 +14,5 @@ Learning Project for Rails Basics.
   * Gist
   * Feedback
   * Badge
+  * BadgeRule
   
