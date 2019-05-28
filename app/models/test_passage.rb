@@ -31,7 +31,7 @@ class TestPassage < ApplicationRecord
   end
 
   def time_left
-    result = created_at + test.timer.minutes - Time.current
+    result = created_at + test.timer.seconds - Time.current
     result >= 0 ? result : 0
   end
 

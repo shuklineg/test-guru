@@ -17,8 +17,8 @@
     </div>
 
     <div class='form-group col-lg-3'>
-      <%= form.label :timer %>
-      <%= form.number_field :timer, id: :test_timer, class: 'form-control', placeholder: Test.human_attribute_name(:timer) %>
+      <%= form.label :timer_in_minutes %>
+      <%= form.number_field :timer_in_minutes, id: :test_timer_in_minutes, class: 'form-control', placeholder: Test.human_attribute_name(:timer_in_minutes) %>
       <small class='form-text text-muted'>
           (<%= t('.zero_if_none') %>)
         </small>

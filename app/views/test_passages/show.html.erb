@@ -18,10 +18,10 @@
       <div class='progress-bar bg-success' id='test-progress-bar' role='progressbar' style='width: 0%;' aria-valuenow='0' aria-valuemin='0' aria-valuemax='100'>0%</div>
     </div>
     <% if @test_passage.test.timer.nonzero? %>
-      <div id='passage-timer' data-time-left='<%= @test_passage.time_left.seconds.to_i %>' data-time-total='<%= @test_passage.test.timer.minutes.seconds.to_i %>'>
+      <div id='passage-timer' data-time-left='<%= @test_passage.time_left.seconds.to_i %>' data-time-total='<%= @test_passage.test.timer.to_i %>'>
         <div>Осталось времени: <span id='timer-value'> <%= Time.at(@test_passage.time_left).utc.strftime('%H:%M:%S') %> </span></div>
         <div class='progress'>
-          <div class='progress-bar bg-info' id='timer-progress-bar' role='progressbar' style='width: <%= @test_passage.time_left/@test_passage.test.timer.minutes*100 %>%;' aria-valuenow='0' aria-valuemin='0' aria-valuemax='100'></div>
+          <div class='progress-bar bg-info' id='timer-progress-bar' role='progressbar' style='width: <%= @test_passage.time_left/@test_passage.test.timer.seconds*100 %>%;' aria-valuenow='0' aria-valuemin='0' aria-valuemax='100'></div>
         </div>
       </div>
     <% end %>

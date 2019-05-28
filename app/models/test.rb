@@ -12,10 +12,18 @@ class Test < ApplicationRecord
   scope :hard, -> { by_level(5..Float::INFINITY) }
   scope :by_category, ->(title) { joins(:category).where(categories: { title: title }) }
 
-  validates :title, :level, :timer, presence: true
+  validates :title, :level, :timer_in_minutes, presence: true
   validates :title, uniqueness: { scope: :level, case_sensitive: false }
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-  validates :timer, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :timer_in_minutes, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+
+  def timer_in_minutes
+    timer.zero? ? 0 : timer / 60
+  end
+
+  def timer_in_minutes=(value)
+    self.timer = value.to_i * 60
+  end
 
   def self.titles_by_category(title)
     by_category(title).pluck(:title)

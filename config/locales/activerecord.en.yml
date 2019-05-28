@@ -12,6 +12,7 @@ en:
         category: 'Category'
         questions: 'Questions'
         timer: 'Timer'
+        timer_in_minutes: 'Timer in minutes'
       test/questions:
         size: 'Questions count'
       answer:
