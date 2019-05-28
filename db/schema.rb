@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 2019_05_28_042843) do
 
   create_table "badge_rules", force: :cascade do |t|
     t.string "rule_type", null: false
-    t.string "resource_type"
-    t.bigint "resource_id"
+    t.bigint "category_id"
+    t.bigint "test_id"
     t.bigint "badge_id", null: false
     t.integer "level"
     t.boolean "first_try", default: false, null: false
@@ -35,16 +35,23 @@ ActiveRecord::Schema.define(version: 2019_05_28_042843) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["badge_id"], name: "index_badge_rules_on_badge_id"
+    t.index ["category_id"], name: "index_badge_rules_on_category_id"
     t.index ["level"], name: "index_badge_rules_on_level"
-    t.index ["resource_type", "resource_id"], name: "index_badge_rules_on_resource_type_and_resource_id"
     t.index ["rule_type"], name: "index_badge_rules_on_rule_type"
+    t.index ["test_id"], name: "index_badge_rules_on_test_id"
   end
 
   create_table "badges", force: :cascade do |t|
     t.string "caption", null: false
     t.string "image", null: false
+    t.bigint "category_id"
+    t.bigint "test_id"
+    t.string "rule_name"
+    t.integer "level", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_badges_on_category_id"
+    t.index ["test_id"], name: "index_badges_on_test_id"
   end
 
   create_table "badges_users", id: false, force: :cascade do |t|
@@ -138,6 +145,8 @@ ActiveRecord::Schema.define(version: 2019_05_28_042843) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "badges", "categories"
+  add_foreign_key "badges", "tests"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"

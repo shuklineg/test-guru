@@ -37,6 +37,6 @@ class Admin::BadgeRulesController < Admin::BaseController
   end
 
   def badge_rule_params
-    params.require(:badge_rule).permit(:badge_id, :resource_id, :resource_type, :first_try, :level, :rule_type, :unique)
+    params.require(:badge_rule).permit(:badge_id, :test_id, :category_id, :first_try, :level, :rule_type, :unique)
   end
 end

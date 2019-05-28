@@ -1,46 +1,55 @@
 ru:
-  badge:
-    rules:
-      complete_test: 'Завершить определенный тест'
-      complete_any_test: 'Завершить любой тест'
-      complete_category: 'Завершить определенную категорию'
-      complete_level: 'Завершить все тесты заданного уровня'
-      first_try_test: 'Завершить определенный тест с первой попытки'
-      first_try_any_test: 'Завершить любой тест с первой попытки'
-      complete_any_category: 'Завершить любую категорию'
+  badge_rule:
+    type:
+      test: 'Завершить тест'
+      category: 'Завершить категорию'
+      level: 'Завершить уровень'
   admin:
     navigation:
-      badges: 'Бейджи'
+      badges: &badges 'Бейджи'
     badges:
+      badge_rule:
+        create: &create 'Создать'
+        actions: &actions 'Действия'
+        edit: &edit 'Редактировать'
+        destroy: &destroy 'Удалить'
       index:
-        actions: 'Действия'
-        create: 'Создать'
+        actions: *actions
+        create: *create
       new:
-        badges: 'Бейджи'
+        badges: *badges
       edit:
-        badges: 'Бейджи'
-        show: 'Открыть'
-        destroy: 'Удалить'
+        badges: *badges
+        show: &show 'Открыть'
+        destroy: *destroy
       show:
-        badges: 'Бейджи'
-        edit: 'Редактировать'
-        destroy: 'Удалить'
+        badges: *badges
+        edit: *edit
+        destroy: *destroy
       badge:
-        show: 'Открыть'
-        edit: 'Редактировать'
-        destroy: 'Удалить'
+        show: *show
+        edit: *edit
+        destroy: *destroy
+    badge_rules:
+      new:
+        badges: *badges
+      edit:
+        badges: *badges
+      form:
+        leave_blank_if_any: 'Оставьте пустым, чтобы применить ко всем'
   activerecord:
     attributes:
       badge:
         caption: 'Заголовок'
         image: 'Изображение'
-        rule_name: 'Правило'
-        params: 'Параметры'
+        rule: 'Правило'
+      badge_rule:
+        first_try: 'С первой попытки'
+        unique: 'Уникальный'
+        level: 'Уровень'
         category: 'Категория'
         test: 'Тест'
-        level: 'Уровень'
+        rule_type: 'Тип правила'
     models:
       badge: 'Бейдж'
-  shared:
-    navigation:
-      badges: 'Бейджи'
+      badge_rule: 'Правило'
