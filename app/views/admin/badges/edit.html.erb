@@ -1,0 +1,10 @@
+<div class='card col-lg-8 offset-lg-2 border rounded my-3 text-xs-center'>
+  <div class='card-body'>
+    <%= render 'form' %>
+    <div class='btn-group my-3 btn-block' role='group'>
+      <%= link_to t('.badges'), admin_badges_path, class: 'btn btn-secondary' %>
+      <%= link_to t('.show'), admin_badge_path(@badge), class: 'btn btn-secondary' %>
+      <%= link_to t('.destroy'), admin_badge_path(@badge), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-danger'  %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+en:
+  badge_rule:
+    type:
+      test: 'Complete test'
+      category: 'Complete category'
+      level: 'Complete level'
+  admin:
+    navigation:
+      badges: &badges 'Badges'
+    badges:
+      badge_rule:
+        create: &create 'Create'
+        actions: &actions 'Actions'
+        edit: &edit 'Edit'
+        destroy: &destroy 'Delete'
+      index:
+        actions: *actions
+        create: *create
+      new:
+        badges: *badges
+      edit:
+        badges: *badges
+        show: &show 'Open'
+        destroy: *destroy
+      show:
+        badges: *badges
+        edit: *edit
+        destroy: *destroy
+      badge:
+        show: *show
+        edit: *edit
+        destroy: *destroy
+    badge_rules:
+      new:
+        badges: *badges
+      edit:
+        badges: *badges
+      form:
+        leave_blank_if_any: 'Leave blank to apply to all'
+  activerecord:
+    attributes:
+      badge:
+        caption: 'Caption'
+        image: 'Image'
+        rule: 'Rule'
+      badge_rule:
+        first_try: 'First try'
+        unique: 'Unique'
+        level: 'Level'
+        category: 'Category'
+        test: 'Test'
+        rule_type: 'Rule type'
+    models:
+      badge: 'Badge'
+      badge_rule: 'Badge rule'

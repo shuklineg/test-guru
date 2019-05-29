@@ -4,6 +4,7 @@ class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
+  has_one :category, through: :test
 
   before_create :set_first_question
   before_update :set_next_question

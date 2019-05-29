@@ -1,0 +1,51 @@
+<% if badge.rule %>
+  <dl class='row'>
+    <dt class='col-lg-3'><%= BadgeRule.human_attribute_name(:rule_type) %> </dt>
+    <dd class='col-lg-9'><%= t(badge.rule.rule_type, scope: [:badge_rule, :type]) %></dd>
+
+    <dt class='col-lg-3'><%= BadgeRule.human_attribute_name(:unique) %></dt>
+    <dd class='col-lg-9'><%= badge.rule.unique ? octicon('check') : octicon('x') %></dd>
+    
+    <% if badge.rule.params.include? :first_try %>
+      <dt class='col-lg-3'><%= BadgeRule.human_attribute_name(:first_try) %></dt>
+      <dd class='col-lg-9'><%= badge.rule.first_try ? octicon('check') : octicon('x') %></dd>    
+    <% end %>
+
+    <% if badge.rule.params.include? :level %>
+      <dt class='col-lg-3'><%= BadgeRule.human_attribute_name(:level) %></dt>
+      <dd class='col-lg-9'><%= badge.rule.level %></dd>    
+    <% end %>
+    
+    <% if badge.rule.params.include? :category %>
+      <dt class='col-lg-3'><%= BadgeRule.human_attribute_name(:category) %></dt>
+      <dd class='col-lg-9'><%= badge.rule.category ? "#{badge.rule.category.title}" : t('.any') %></dd>
+    <% end %>
+
+    <% if badge.rule.params.include? :test %>
+      <dt class='col-lg-3'><%= BadgeRule.human_attribute_name(:test) %></dt>
+      <dd class='col-lg-9'><%= badge.rule.test ? "#{badge.rule.test.title}" : t('.any') %></dd>
+    <% end %>
+  </dl>
+  <div class='btn-group' role='group'>
+    <button class='btn btn-primary dropdown-toggle btn-primary m-3' type='button' id='dropdownRuleButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+      <%= t('.actions') %>
+    </button>
+    <div class='dropdown-menu' aria-labelledby='dropdownRuleButton'>
+      <%= link_to t('.edit'), edit_admin_badge_rule_path(badge), class: 'dropdown-item' %>
+      <%= link_to t('.destroy'), admin_badge_rule_path(badge), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'dropdown-item'  %>
+    </div>
+  </div>
+<% else %>
+  <div class='btn-group' role='group'>
+    <div class='btn-group' role='group'>
+      <button class='btn btn-primary dropdown-toggle btn-primary m-3' type='button' id='dropdownRuleButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+        <%= t('.create') %>
+      </button>
+      <div class='dropdown-menu' aria-labelledby='dropdownRuleButton'>
+        <%= link_to t('test', scope: [:badge_rule, :type]), new_admin_badge_rule_path(badge, badge_rule: { rule_type: 'test' } ), class: 'dropdown-item' %>
+        <%= link_to t('category', scope: [:badge_rule, :type]), new_admin_badge_rule_path(badge, badge_rule: { rule_type: 'category'} ), class: 'dropdown-item' %>
+        <%= link_to t('level', scope: [:badge_rule, :type]), new_admin_badge_rule_path(badge, badge_rule: { rule_type: 'level' } ), class: 'dropdown-item' %>
+      </div>
+    </div>
+  </div>
+<% end %>
