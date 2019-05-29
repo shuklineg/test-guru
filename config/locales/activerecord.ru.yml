@@ -11,6 +11,8 @@ ru:
         author: 'Автор'
         category: 'Категория'
         questions: 'Вопросы'
+        timer: 'Таймер в секундах'
+        timer_in_minutes: 'Таймер в минутах'
       test/questions:
         size: 'Количество вопросов'
       answer:

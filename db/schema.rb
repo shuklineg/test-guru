@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_05_28_042843) do
+=======
+ActiveRecord::Schema.define(version: 2019_05_27_045202) do
+>>>>>>> task/timer
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +117,10 @@ ActiveRecord::Schema.define(version: 2019_05_28_042843) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "author_id"
+<<<<<<< HEAD
+=======
+    t.integer "timer", default: 0
+>>>>>>> task/timer
     t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["level", "title"], name: "index_tests_on_level_and_title", unique: true
@@ -145,8 +153,11 @@ ActiveRecord::Schema.define(version: 2019_05_28_042843) do
   end
 
   add_foreign_key "answers", "questions"
+<<<<<<< HEAD
   add_foreign_key "badges", "categories"
   add_foreign_key "badges", "tests"
+=======
+>>>>>>> task/timer
   add_foreign_key "feedbacks", "users"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
