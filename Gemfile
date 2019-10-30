@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Auth
-gem 'devise', '~> 4.0'
+gem 'devise', '~> 4.7'
 
 # Networking
 gem 'faraday'
