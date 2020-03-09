@@ -1,6 +1,6 @@
 <tr>
   <td><%= answer.body %></td>
-  <td><%= answer.correct ? '&#10004;'.html_safe : '&#10008;'.html_safe %></td>
+  <td><%= answer.correct ? octicon('check') : octicon('x') %></td>
   <td>
     <div class='btn-group' role='group'>
       <%= link_to t('.edit'), edit_admin_answer_path(answer), class: 'btn btn-secondary' %>

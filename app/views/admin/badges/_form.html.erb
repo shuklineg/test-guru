@@ -1,0 +1,12 @@
+<%= form_with(model: [:admin, @badge], local: true) do |form| %>
+  <%= render 'shared/validation_errors', resource: @badge %>
+  <div class='form-group'>
+    <%= form.label :caption %>
+    <%= form.text_field :caption, id: :badge_caption, class: 'form-control' %>
+  </div>
+  <div class='form-group'>
+    <%= form.label :image %>
+    <%= form.select :image, Badge.images, {}, { class: 'form-control custom-select custom-select-lg' } %>
+  </div>
+  <%= form.submit class: 'btn btn-primary btn-block' %>
+<% end %>

@@ -1,0 +1,55 @@
+ru:
+  badge_rule:
+    type:
+      test: 'Завершить тест'
+      category: 'Завершить категорию'
+      level: 'Завершить уровень'
+  admin:
+    navigation:
+      badges: &badges 'Бейджи'
+    badges:
+      badge_rule:
+        create: &create 'Создать'
+        actions: &actions 'Действия'
+        edit: &edit 'Редактировать'
+        destroy: &destroy 'Удалить'
+      index:
+        actions: *actions
+        create: *create
+      new:
+        badges: *badges
+      edit:
+        badges: *badges
+        show: &show 'Открыть'
+        destroy: *destroy
+      show:
+        badges: *badges
+        edit: *edit
+        destroy: *destroy
+      badge:
+        show: *show
+        edit: *edit
+        destroy: *destroy
+    badge_rules:
+      new:
+        badges: *badges
+      edit:
+        badges: *badges
+      form:
+        leave_blank_if_any: 'Оставьте пустым, чтобы применить ко всем'
+  activerecord:
+    attributes:
+      badge:
+        caption: 'Заголовок'
+        image: 'Изображение'
+        rule: 'Правило'
+      badge_rule:
+        first_try: 'С первой попытки'
+        unique: 'Уникальный'
+        level: 'Уровень'
+        category: 'Категория'
+        test: 'Тест'
+        rule_type: 'Тип правила'
+    models:
+      badge: 'Бейдж'
+      badge_rule: 'Правило'

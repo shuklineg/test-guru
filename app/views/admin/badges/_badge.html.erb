@@ -1,0 +1,14 @@
+<tr>
+  <td><%= badge.caption %></td>
+  <td><%= image_tag badge.image %></td>
+  <td>
+    <%= render 'badge_rule', badge: badge %>
+  </td>
+  <td>
+    <div class='btn-group' role='group'>
+      <%= link_to t('.show'), admin_badge_path(badge), class: 'btn btn-primary' %>
+      <%= link_to t('.edit'), edit_admin_badge_path(badge), class: 'btn btn-secondary' %>
+      <%= link_to t('.destroy'), admin_badge_path(badge), method: :delete, data: { confirm: t('dialogs.are_you_sure')}, class: 'btn btn-danger'  %>
+    </div>
+  </td>
+</tr>
